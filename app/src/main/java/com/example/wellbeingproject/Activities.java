@@ -8,7 +8,7 @@ import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Home extends AppCompatActivity {
+public class Activities extends AppCompatActivity {
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,7 @@ public class Home extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Home.this, "Back button", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Activities.this, "Back button", Toast.LENGTH_SHORT).show();
             }
         });
 
