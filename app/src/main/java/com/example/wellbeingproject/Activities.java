@@ -13,7 +13,7 @@ public class Activities extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activities);
 
         ImageView backbutton = findViewById(R.id.back_button);
 
@@ -21,7 +21,7 @@ public class Activities extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Activities.this, "Back button", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 

@@ -13,7 +13,7 @@ public class Wellbeing extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.wellbeing);
 
         ImageView backbutton = findViewById(R.id.back_button);
 
@@ -21,7 +21,7 @@ public class Wellbeing extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(Wellbeing.this, "Back button", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
 

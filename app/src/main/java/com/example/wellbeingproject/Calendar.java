@@ -8,12 +8,12 @@ import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Mentor extends AppCompatActivity {
+public class Calendar extends AppCompatActivity {
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mentor);
+        setContentView(R.layout.calendar);
 
         ImageView backbutton = findViewById(R.id.back_button);
 

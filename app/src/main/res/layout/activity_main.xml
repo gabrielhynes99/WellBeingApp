@@ -14,8 +14,8 @@
 
     <GridLayout
         android:columnCount="2"
-        android:rowCount="3"
-        android:layout_weight="10"
+        android:rowCount="1"
+        android:layout_weight="3.25"
         android:alignmentMode="alignMargins"
         android:columnOrderPreserved="false"
         android:layout_width="match_parent"
@@ -26,6 +26,7 @@
         <!-- Row 1 -->
         <!-- Column 1 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/calendar_home"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -61,6 +62,7 @@
         <!-- Row 1 -->
         <!-- Column 2 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/support_home"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -93,9 +95,23 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+    </GridLayout>
+
+    <GridLayout
+        android:columnCount="1"
+        android:rowCount="1"
+        android:layout_weight="3.5"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:background="@android:color/white">
+
         <!-- Row 2 -->
         <!-- Column 1 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/wellbeing_home"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -128,44 +144,23 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Row 2 -->
-        <!-- Column 2 -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            android:layout_marginLeft="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginRight="8dp"
-            app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+    </GridLayout>
 
-            <LinearLayout
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:orientation="vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="WellBeing"
-                    android:layout_gravity="center"
-                    android:textSize="25sp"/>
-                <ImageView
-                    android:src="@drawable/test_wellbeing"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+    <GridLayout
+        android:columnCount="2"
+        android:rowCount="1"
+        android:layout_weight="3.25"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:background="@android:color/white">
 
         <!-- Row 3 -->
         <!-- Column 1 -->
         <androidx.cardview.widget.CardView
+            android:id="@+id/activities_home"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -201,7 +196,7 @@
         <!-- Row 3 -->
         <!-- Column 2 -->
         <androidx.cardview.widget.CardView
-
+            android:id="@+id/tracker_home"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_columnWeight="1"
@@ -233,8 +228,6 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-
-
 
     </GridLayout>
 
