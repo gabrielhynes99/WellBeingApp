@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ImageView backbutton = findViewById(R.id.back_button);
+        ImageView mentorButton = findViewById(R.id.mentor);
 
         //to access the back button
         backbutton.setOnClickListener(new View.OnClickListener() {
