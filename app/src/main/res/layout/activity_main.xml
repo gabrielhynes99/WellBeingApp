@@ -87,7 +87,7 @@
                     android:layout_gravity="center"
                     android:textSize="25sp"/>
                 <ImageView
-                    android:src="@drawable/test_support"
+                    android:src="@drawable/support"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -221,7 +221,7 @@
                     android:layout_gravity="center"
                     android:textSize="25sp"/>
                 <ImageView
-                    android:src="@drawable/test_tracker"
+                    android:src="@drawable/tracker"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
