@@ -30,6 +30,14 @@
             android:parentActivityName=".MainActivity" >
         </activity>
 
+        <activity android:name=".Wellbeing_emotions"
+            android:parentActivityName=".Wellbeing" >
+        </activity>
+
+        <activity android:name=".Wellbeing_tasks"
+            android:parentActivityName=".Wellbeing" >
+        </activity>
+
         <activity android:name=".Activities"
             android:parentActivityName=".MainActivity" >
         </activity>
