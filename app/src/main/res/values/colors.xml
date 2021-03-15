@@ -4,4 +4,9 @@
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="primaryColour">#005fa6</color>
+    <color name="wellbeing_really_good">#66de42</color>
+    <color name="wellbeing_good">#e8e11b</color>
+    <color name="wellbeing_okay">#e0a638</color>
+    <color name="wellbeing_bad">#e76f2d</color>
+    <color name="wellbeing_really_bad">#ff1700</color>
 </resources>
