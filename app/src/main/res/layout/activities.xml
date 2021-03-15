@@ -14,7 +14,7 @@
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="144dp"
         android:layout_weight="3.5"
         android:alignmentMode="alignMargins"
         android:background="@android:color/white"
@@ -37,12 +37,11 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
-            <TextView
-                android:id="@+id/textView"
+            <fragment
+                android:id="@+id/mapAPI"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="MAP"
-                android:textSize="36sp" />
+                android:layout_height="match_parent"></fragment>
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
@@ -220,6 +219,5 @@
         </androidx.cardview.widget.CardView>
 
     </GridLayout>
-
 
 </LinearLayout>
