@@ -20,19 +20,29 @@
         android:layout_gravity="center"
         />
 
-    <GridLayout
-        android:columnCount="1"
-        android:rowCount="5"
-        android:layout_weight="10"
-        android:alignmentMode="alignMargins"
-        android:columnOrderPreserved="false"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:padding="10dp"
-        android:background="@android:color/white">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
+        <EditText
+            android:layout_width="307dp"
+            android:layout_height="149dp"
+            android:hint="Type here...">
 
+        </EditText>
 
-    </GridLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:src="@drawable/speech_to_text" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+    </Button>
 
 </LinearLayout>
