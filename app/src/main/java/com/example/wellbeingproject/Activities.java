@@ -10,13 +10,31 @@ import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.FragmentActivity;
 
-public class Activities extends AppCompatActivity {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class Activities extends FragmentActivity implements OnMapReadyCallback {
+
+    //Map variables
+    GoogleMap mapAPI;
+    SupportMapFragment mapFragment;
+
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activities);
+
+        //Show map in fragment
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.mapAPI);
+        mapFragment.getMapAsync(this);
 
         ImageView backbutton = findViewById(R.id.back_button);
 
@@ -70,5 +88,14 @@ public class Activities extends AppCompatActivity {
             }
         });
 
+    }
+
+    //Map settings
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mapAPI = googleMap;
+        LatLng sjog = new LatLng(53.28427788032826, -6.190988054941779);
+        mapAPI.addMarker(new MarkerOptions().position(sjog).title("sjog"));
+        mapAPI.moveCamera(CameraUpdateFactory.newLatLng(sjog));
     }
 }

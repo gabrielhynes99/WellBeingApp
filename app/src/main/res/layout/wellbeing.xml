@@ -45,24 +45,26 @@
             app:cardCornerRadius="8dp">
 
             <LinearLayout
-                android:layout_gravity="left|center_vertical"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:src="@drawable/happy_emoji"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:src="@drawable/happy_emoji" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Really Good"
+                    android:layout_marginLeft="30sp"
                     android:layout_gravity="center"
-                    android:textSize="25sp"/>
+                    android:textColor="@color/wellbeing_really_good"
+                    android:textSize="35sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -81,24 +83,26 @@
             app:cardCornerRadius="8dp">
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:src="@drawable/good_emoji"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:src="@drawable/good_emoji" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Good"
+                    android:layout_marginLeft="30sp"
+                    android:textColor="@color/wellbeing_good"
                     android:layout_gravity="center"
-                    android:textSize="25sp"/>
+                    android:textSize="35sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -117,24 +121,26 @@
             app:cardCornerRadius="8dp">
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:src="@drawable/ok_emoji"
+                    android:layout_width="95dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:src="@drawable/ok_emoji" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ok"
+                    android:text="Okay"
+                    android:layout_marginLeft="30sp"
+                    android:textColor="@color/wellbeing_okay"
                     android:layout_gravity="center"
-                    android:textSize="25sp"/>
+                    android:textSize="35sp" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -156,21 +162,23 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
                 <ImageView
                     android:src="@drawable/bad_emoji"
                     android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Bad"
+                    android:layout_marginLeft="30sp"
+                    android:textColor="@color/wellbeing_bad"
                     android:layout_gravity="center"
-                    android:textSize="25sp"/>
+                    android:textSize="35sp"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -192,11 +200,11 @@
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="95dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/sad_emoji" />
@@ -205,8 +213,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Really Bad"
+                    android:layout_marginLeft="30sp"
+                    android:textColor="@color/wellbeing_really_bad"
                     android:layout_gravity="center"
-                    android:textSize="25sp"/>
+                    android:textSize="35sp"/>
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
