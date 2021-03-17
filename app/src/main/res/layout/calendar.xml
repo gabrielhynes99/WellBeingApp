@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     android:weightSum="10"
     tools:context=".Calendar">
 
@@ -13,179 +14,220 @@
         layout="@layout/toolbar" />
 
 
-    <LinearLayout
+    <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/leftArrow"
-            android:textColor="@color/primaryColour"
-            android:background="@null"
-            android:textStyle="bold"
-            android:onClick="previousMonthAction"
-            android:textSize="20sp"/>
+        android:layout_height="300dp"
+        android:layout_weight="3.5"
+        android:alignmentMode="alignMargins"
+        android:background="@android:color/white"
+        android:columnCount="1"
+        android:columnOrderPreserved="false"
+        android:padding="10dp"
+        android:rowCount="1">
 
-        <TextView
-            android:id="@+id/monthYearTV"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/calendar_home"
             android:layout_width="0dp"
-            android:layout_weight="2"
-            android:layout_height="wrap_content"
-            android:text="March 2021"
-            android:textSize="16sp"
-            android:textAlignment="center"
-            android:textColor="@color/black"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/rightArrow"
-            android:textColor="@color/primaryColour"
-            android:background="@null"
-            android:textStyle="bold"
-            android:onClick="nextMonthAction"
-            android:textSize="20sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/gray"
-            android:text="SUN"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
-        <View
-            android:id="@+id/d1"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/listDivider" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="MON"
-            android:textColor="@color/white"
-            android:background="#152238"
-            android:textAlignment="center"
-            android:textSize="16sp" />
-
-        <View
-            android:id="@+id/d2"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/listDivider" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TUE"
-            android:textColor="@color/white"
-            android:background="#22359d"
-            android:textAlignment="center"
-            android:textSize="16sp" />
-
-        <View
-            android:id="@+id/d3"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/listDivider" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="WED"
-            android:textColor="@color/white"
-            android:background="#4d934d"
-            android:textAlignment="center"
-            android:textSize="16sp" />
-
-        <View
-            android:id="@+id/d4"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/listDivider" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="THU"
-            android:textColor="@color/white"
-            android:background="#FFCC00"
-            android:textAlignment="center"
-            android:textSize="16sp" />
-
-        <View
-            android:id="@+id/d5"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/listDivider" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="FRI"
-            android:textColor="@color/white"
-            android:background="#e33232"
-            android:textAlignment="center"
-            android:textSize="16sp" />
-
-        <View
-            android:id="@+id/d6"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:background="?android:attr/listDivider" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="SAT"
-            android:textColor="@color/white"
-            android:background="@color/gray"
-            android:textAlignment="center"
-            android:textSize="16sp"/>
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp">
 
 
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/calendarRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="@string/leftArrow"
+                    android:textColor="@color/primaryColour"
+                    android:background="@null"
+                    android:textStyle="bold"
+                    android:onClick="previousMonthAction"
+                    android:textSize="20sp"/>
 
-    <View
-        android:id="@+id/divider1"
-        android:layout_width="match_parent"
-        android:layout_height="4dp"
-        android:background="?actionBarDivider"/>
+                <TextView
+                    android:id="@+id/monthYearTV"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="March 2021"
+                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="@string/rightArrow"
+                    android:textColor="@color/primaryColour"
+                    android:background="@null"
+                    android:textStyle="bold"
+                    android:onClick="nextMonthAction"
+                    android:textSize="20sp"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="50dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="M"
+                    android:textColor="@color/white"
+                    android:background="#152238"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/d2"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="T"
+                    android:textColor="@color/white"
+                    android:background="#22359d"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/d3"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="W"
+                    android:textColor="@color/white"
+                    android:background="#4d934d"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/d4"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="T"
+                    android:textColor="@color/white"
+                    android:background="#FFCC00"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/d5"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="F"
+                    android:textColor="@color/white"
+                    android:background="#e33232"
+                    android:textAlignment="center"
+                    android:textSize="18sp" />
+
+                <View
+                    android:id="@+id/d6"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="S"
+                    android:textColor="@color/white"
+                    android:background="@color/gray"
+                    android:textAlignment="center"
+                    android:textSize="18sp"/>
+
+                <View
+                    android:id="@+id/d1"
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="?android:attr/listDivider" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/gray"
+                    android:text="S"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/calendarRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="80dp"/>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </GridLayout>
 
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Today 19"
-        android:textColor="#FF0000"
-        android:textSize="20sp"
+        android:layout_weight="1"
+        android:text="Today 19th"
+        android:textColor="#e33232"
+        android:textSize="18sp"
         android:textStyle="bold" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
+
 
     <ListView
         android:id="@+id/list"

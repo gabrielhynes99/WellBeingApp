@@ -73,7 +73,10 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);
         int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();
 
-        for(int i = 1; i<=42; i++){
+
+        //This for loop fills the days in the month array
+        //i = 2 starts the week on a monday instead of a sunday
+        for(int i = 2; i<=42; i++){
 
             if(i <= dayOfWeek || i > daysInMonth + dayOfWeek)
             {
@@ -90,7 +93,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
     private String monthYearFromDate(LocalDate date){
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM YYYY");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyy");
         return date.format(formatter);
     }
 
@@ -106,7 +109,6 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
         selectedDate = selectedDate.plusMonths(1);
         setMonthView();
-
 
     }
 
