@@ -20,7 +20,7 @@ public class Wellbeing extends AppCompatActivity {
 
         ImageView backbutton = findViewById(R.id.back_button);
 
-        //emjoy setup
+        //enjoy setup
         CardView reallyGood = findViewById(R.id.wellbeing_amazing);
         CardView good = findViewById(R.id.wellbeing_good);
         CardView okay = findViewById(R.id.wellbeing_ok);
