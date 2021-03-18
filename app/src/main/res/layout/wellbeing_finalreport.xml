@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Would you like to say more about your day?"
+        android:text="Say more about your day below"
         android:textSize="20sp"
         android:layout_gravity="center"
         />
