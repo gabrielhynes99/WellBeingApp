@@ -20,29 +20,69 @@
         android:layout_gravity="center"
         />
 
-    <LinearLayout
+    <GridLayout
+        android:columnCount="1"
+        android:rowCount="1"
+        android:layout_weight="4"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:background="@android:color/white">
 
-        <EditText
-            android:layout_width="307dp"
-            android:layout_height="149dp"
-            android:hint="Type here...">
+    <!-- Row 1 -->
+    <!-- Column 1 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/report_submit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="8dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="8dp">
 
-        </EditText>
-
-        <ImageView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:src="@drawable/speech_to_text" />
+            android:layout_height="235dp"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <EditText
+                android:layout_width="307dp"
+                android:layout_height="149dp"
+                android:hint="Type here...">
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+            </EditText>
 
-    </Button>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:src="@drawable/speech_to_text" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@android:color/holo_orange_light"
+                    android:text="Submit"
+                    android:textColor="@android:color/white">
+
+                </Button>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    </GridLayout>
 
 </LinearLayout>

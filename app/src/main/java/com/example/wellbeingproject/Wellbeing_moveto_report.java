@@ -14,18 +14,18 @@ import androidx.cardview.widget.CardView;
 
 import static com.example.wellbeingproject.Wellbeing_emotions.emotion;
 
-public class Wellbeing_finalreport extends AppCompatActivity {
+public class Wellbeing_moveto_report extends AppCompatActivity {
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.wellbeing_finalreport);
+        setContentView(R.layout.wellbeing_moveto_report);
 
         ImageView backbutton = findViewById(R.id.back_button);
 
-        //submit button
-        Button submit = findViewById(R.id.report_submit);
-
+        //yes no buttons
+        Button yes_button = findViewById(R.id.wellbeing_yes);
+        Button no_button = findViewById(R.id.wellbeing_no);
 
         //to access the back button
         backbutton.setOnClickListener(new View.OnClickListener() {
@@ -35,13 +35,23 @@ public class Wellbeing_finalreport extends AppCompatActivity {
             }
         });
 
-        submit.setOnClickListener(new View.OnClickListener() {
+        yes_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_finalreport.this, MainActivity.class);
+                Intent intent = new Intent(Wellbeing_moveto_report.this, Wellbeing_finalreport.class);
                 startActivity(intent);
             }
         });
+
+        no_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Wellbeing_moveto_report.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }
