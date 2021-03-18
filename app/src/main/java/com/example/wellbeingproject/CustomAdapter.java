@@ -52,6 +52,7 @@ public class CustomAdapter extends CursorAdapter {
         t_activityImage.setText(activityImage);
 
 
+
     }//end of bind view
 
 }//end of CustomAdapter class
