@@ -52,7 +52,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         friends.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +60,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         games.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +68,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         weather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -76,7 +76,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         sleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -84,7 +84,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         health.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -92,7 +92,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         shopping.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -100,7 +100,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         dancing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -108,7 +108,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         relationshop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -117,7 +117,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -125,7 +125,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         work.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -134,7 +134,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         learning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
@@ -143,7 +143,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
         other.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_finalreport.class);
+                Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
         });
