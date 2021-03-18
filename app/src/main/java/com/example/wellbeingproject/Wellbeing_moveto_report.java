@@ -47,7 +47,9 @@ public class Wellbeing_moveto_report extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_moveto_report.this, MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
+
             }
         });
 

@@ -45,6 +45,10 @@
             android:parentActivityName=".Wellbeing" >
         </activity>
 
+        <activity android:name=".Wellbeing_moveto_report"
+            android:parentActivityName=".Wellbeing" >
+        </activity>
+
         <activity android:name=".Wellbeing_finalreport"
             android:parentActivityName=".Wellbeing" >
         </activity>

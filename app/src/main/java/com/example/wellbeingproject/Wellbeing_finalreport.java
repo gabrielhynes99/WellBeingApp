@@ -24,7 +24,7 @@ public class Wellbeing_finalreport extends AppCompatActivity {
         ImageView backbutton = findViewById(R.id.back_button);
 
         //submit button
-        Button submit = findViewById(R.id.report_submit);
+        Button submit = findViewById(R.id.submit_report_button);
 
 
         //to access the back button
