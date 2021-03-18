@@ -12,13 +12,7 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Support"
-        android:textColor="@android:color/black"
-        android:textSize="50sp"
-        tools:layout_gravity="center" />
+
 
     <androidx.gridlayout.widget.GridLayout
         android:layout_width="match_parent"
