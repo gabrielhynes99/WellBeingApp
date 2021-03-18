@@ -96,6 +96,6 @@ public class Activities extends FragmentActivity implements OnMapReadyCallback {
         mapAPI = googleMap;
         LatLng sjog = new LatLng(53.28427788032826, -6.190988054941779);
         mapAPI.addMarker(new MarkerOptions().position(sjog).title("sjog"));
-        mapAPI.moveCamera(CameraUpdateFactory.newLatLng(sjog));
+        mapAPI.moveCamera(CameraUpdateFactory.newLatLngZoom(sjog, 15));
     }
 }
