@@ -19,13 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@android:color/white">
-
             <LinearLayout
                 android:layout_gravity="center_horizontal"
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content" >
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -37,18 +35,16 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"/>
             </LinearLayout>
+
             <LinearLayout
                 android:layout_gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                >
-
+                android:layout_height="wrap_content">
                 <ImageView
                     android:layout_width="133dp"
                     android:layout_height="104dp"
                     android:src="@drawable/tracker" />
-
                 <EditText
                     android:id="@+id/steps"
                     android:layout_width="265dp"
@@ -57,8 +53,8 @@
                     android:hint="Steps"
                     android:inputType="number" />
             </LinearLayout>
-
     </GridLayout>
+
     <GridLayout
         android:columnCount="1"
         android:rowCount="1"
@@ -66,17 +62,15 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@android:color/white">
-
         <LinearLayout
             android:layout_gravity="center_horizontal"
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
+            android:layout_height="wrap_content" >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How many glasses of water did you drink today?"
+                android:text="How much water did you drink today??"
                 android:layout_gravity="center"
                 android:textSize="25sp"
                 android:textAlignment="center"
@@ -84,31 +78,26 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"/>
         </LinearLayout>
+
         <LinearLayout
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content">
-
             <ImageView
-            android:layout_width="0dp"
-            android:layout_height="104dp"
-            android:src="@drawable/water"
-            android:layout_weight=".33"/>
-            <ImageView
-                android:layout_width="0dp"
+                android:layout_width="133dp"
                 android:layout_height="104dp"
-                android:src="@drawable/water2"
-                android:layout_weight=".33"/>
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="104dp"
-                android:src="@drawable/water3"
-                android:layout_weight=".33"/>
-
+                android:src="@drawable/water" />
+            <EditText
+                android:id="@+id/sleep"
+                android:layout_width="265dp"
+                android:layout_height="match_parent"
+                android:digits="0123456789"
+                android:hint="Water"
+                android:inputType="number" />
         </LinearLayout>
-
     </GridLayout>
+
 
     <GridLayout
         android:columnCount="1"
@@ -118,14 +107,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="@android:color/white">
-
-
         <LinearLayout
             android:layout_gravity="center_horizontal|center_vertical"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -134,14 +120,10 @@
                 android:textSize="25sp"/>
 
             <ImageView
-
                 android:layout_width="487dp"
                 android:layout_height="152dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:src="@drawable/sleep_tracker" />
-
-            </LinearLayout>
-
+        </LinearLayout>
     </GridLayout>
-
 </LinearLayout>
