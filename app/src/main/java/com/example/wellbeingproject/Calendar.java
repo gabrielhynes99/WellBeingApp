@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
@@ -31,6 +32,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         initWidgets();
         selectedDate = LocalDate.now();
         setMonthView();
+        setCurDate();
 
         ImageView backbutton = findViewById(R.id.back_button);
 
@@ -50,6 +52,13 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
 
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView);
         monthYearText = findViewById(R.id.monthYearTV);
+    }
+
+    private void setCurDate() {
+
+        TextView current_date = findViewById(R.id.current_day);
+        String date = "Today "+dayMonthDateFromDate(selectedDate);
+        current_date.setText(date);
     }
 
     private void setMonthView() {
@@ -97,6 +106,11 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         return date.format(formatter);
     }
 
+    private String dayMonthDateFromDate(LocalDate date){
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE MMMM d");
+        return date.format(formatter);
+    }
 
     public void previousMonthAction(View view){
 
@@ -120,6 +134,8 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
             String message = "Selected Date " + dayText + " " + monthYearFromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
+
+
 
     }
 }
