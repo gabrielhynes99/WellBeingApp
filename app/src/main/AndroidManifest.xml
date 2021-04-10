@@ -25,6 +25,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".Login"
+            android:parentActivityName=".MainActivity" >
+        </activity>
+
         <activity android:name=".Mentor"
             android:parentActivityName=".MainActivity" >
         </activity>

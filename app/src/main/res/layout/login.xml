@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    tools:context=".MainActivity"
+    android:background="@color/primaryColour">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Login"
+        android:layout_marginTop="100sp"
+        android:textSize="50sp"
+        android:textColor="@android:color/white"/>
+
+    <GridLayout
+        android:layout_marginTop="50sp"
+        android:columnCount="1"
+        android:rowCount="1"
+        android:layout_weight="5"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        android:background="@color/primaryColour">
+
+    <!-- Row 1 -->
+    <!-- Column 1 -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/wellbeing_friends"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:layout_marginLeft="8sp"
+        android:layout_marginBottom="8sp"
+        android:layout_marginRight="8sp"
+        app:cardElevation="8sp"
+        app:cardCornerRadius="8sp">
+
+        <LinearLayout
+            android:layout_margin="16dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:layout_gravity="left"
+                android:textSize="25sp"/>
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="200sp"
+                android:layout_height="30sp"
+                android:background="@drawable/loginshape"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password"
+                android:layout_gravity="left"
+                android:textSize="25sp"/>
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="200sp"
+                android:layout_height="30sp"
+                android:background="@drawable/loginshape"/>
+
+            <Button
+                android:id="@+id/login"
+                android:layout_marginTop="20sp"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_orange_light"
+                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    </GridLayout>
+
+</LinearLayout>
