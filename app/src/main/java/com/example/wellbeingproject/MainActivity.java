@@ -41,8 +41,15 @@ public class MainActivity extends AppCompatActivity {
         mentorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Mentor.class);
-                startActivity(intent);
+                if(Login.logged_in == false)
+                {
+                    Intent intent = new Intent(MainActivity.this, Login.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, Mentor.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -50,8 +57,15 @@ public class MainActivity extends AppCompatActivity {
         calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Calendar.class);
-                startActivity(intent);
+                if(Login.logged_in == false)
+                {
+                    Intent intent = new Intent(MainActivity.this, Login.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, Calendar.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -68,8 +82,15 @@ public class MainActivity extends AppCompatActivity {
         wellbeing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Wellbeing.class);
-                startActivity(intent);
+                if(Login.logged_in == false)
+                {
+                    Intent intent = new Intent(MainActivity.this, Login.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, Wellbeing.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -86,8 +107,15 @@ public class MainActivity extends AppCompatActivity {
         tracker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Tracker.class);
-                startActivity(intent);
+                if(Login.logged_in == false)
+                {
+                    Intent intent = new Intent(MainActivity.this, Login.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, Tracker.class);
+                    startActivity(intent);
+                }
             }
         });
 
