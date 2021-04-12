@@ -10,7 +10,6 @@ import android.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
-    private Toolbar toolbar;
     public static boolean logged_in = false;
     EditText ETusername, ETpassword;
     Button login;
@@ -27,7 +26,7 @@ public class Login extends AppCompatActivity {
 
     }
 
-    public void Login(View view) {
+    public void OnLogin(View view) {
         String username = ETusername.getText().toString();
         String password = ETpassword.getText().toString();
         String type = "login";

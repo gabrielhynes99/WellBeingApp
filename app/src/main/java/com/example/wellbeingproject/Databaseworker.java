@@ -28,7 +28,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
     protected String doInBackground(String... params) {
         //checks first string which is passed when accessing database
         String type = params[0];
-        String login_url = "http://sjogwellbeingapp.com/login.php";
+        String login_url = "https://sjogwellbeingapp.com/login.php";
         //if the param is equal to login it will proceed with login function
         if(type.equals("login")) {
             //establish connection with database
