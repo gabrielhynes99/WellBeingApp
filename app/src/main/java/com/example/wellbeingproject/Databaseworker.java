@@ -19,6 +19,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 public class Databaseworker extends AsyncTask<String, String, String> {
+    public static String res = "www";
     Context context;
     AlertDialog alertDialog;
     Databaseworker (Context cntx) {
@@ -85,6 +86,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
         Toast.makeText(context.getApplicationContext(),result, Toast.LENGTH_SHORT).show();
         if(result.equals("loggedin"))
         {
+            res = "loggedin";
             Login.logged_in = true;
         }
     }

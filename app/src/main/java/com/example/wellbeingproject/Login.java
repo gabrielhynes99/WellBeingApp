@@ -8,7 +8,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import static com.example.wellbeingproject.Databaseworker.res;
 
 public class Login extends AppCompatActivity {
     public static boolean logged_in;
@@ -34,18 +37,15 @@ public class Login extends AppCompatActivity {
         String type = "login";
         Databaseworker DBWorker = new Databaseworker(this);
         DBWorker.execute(type, username, password);
-        while(logged_in == false) {
-            if(logged_in == true) {
-                Intent intent = new Intent(Login.this, MainActivity.class);
-                startActivity(intent);
-            }
-        }
+        Loggedin();
     }
 
     //forward to home page
     public void Loggedin() {
-        if(logged_in == true) {
 
+        if(res.equals("loggedin")) {
+            Intent intent = new Intent(Login.this, MainActivity.class);
+            startActivity(intent);
         }
     }
 }
