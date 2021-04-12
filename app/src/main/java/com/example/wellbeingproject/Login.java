@@ -5,17 +5,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
-    public static boolean logged_in = false;
+    public static boolean logged_in;
     EditText ETusername, ETpassword;
     Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        logged_in = false;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
@@ -32,10 +34,18 @@ public class Login extends AppCompatActivity {
         String type = "login";
         Databaseworker DBWorker = new Databaseworker(this);
         DBWorker.execute(type, username, password);
-        if(logged_in == true)
-        {
-            Intent intent = new Intent(Login.this, MainActivity.class);
-            startActivity(intent);
+        while(logged_in == false) {
+            if(logged_in == true) {
+                Intent intent = new Intent(Login.this, MainActivity.class);
+                startActivity(intent);
+            }
+        }
+    }
+
+    //forward to home page
+    public void Loggedin() {
+        if(logged_in == true) {
+
         }
     }
 }

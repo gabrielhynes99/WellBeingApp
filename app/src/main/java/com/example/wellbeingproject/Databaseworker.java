@@ -2,6 +2,7 @@ package com.example.wellbeingproject;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.widget.Toast;
 
@@ -82,7 +83,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
         alertDialog.setMessage(result);
         alertDialog.show();
         Toast.makeText(context.getApplicationContext(),result, Toast.LENGTH_SHORT).show();
-        if(result == "logged in")
+        if(result.equals("loggedin"))
         {
             Login.logged_in = true;
         }
