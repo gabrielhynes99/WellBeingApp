@@ -2,16 +2,14 @@ package com.example.wellbeingproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import static com.example.wellbeingproject.Databaseworker.res;
 
 public class Login extends AppCompatActivity {
     public static boolean logged_in;
@@ -32,18 +30,26 @@ public class Login extends AppCompatActivity {
     }
 
     public void OnLogin(View view) {
+
         String username = ETusername.getText().toString();
         String password = ETpassword.getText().toString();
         String type = "login";
         Databaseworker DBWorker = new Databaseworker(this);
         DBWorker.execute(type, username, password);
-        Loggedin();
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Loggedin();
+            }
+        },500);
+
     }
 
     //forward to home page
-    public void Loggedin() {
+    public synchronized void Loggedin() {
 
-        if(res.equals("loggedin")) {
+        if(logged_in) {
             Intent intent = new Intent(Login.this, MainActivity.class);
             startActivity(intent);
         }

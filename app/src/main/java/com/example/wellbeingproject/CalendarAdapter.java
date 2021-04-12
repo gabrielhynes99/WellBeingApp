@@ -4,6 +4,7 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,11 +41,12 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
 
         holder.dayOfMonth.setText(daysOfMonth.get(position));
 
-        if (daysOfMonth.get(position).equals(date(selectedDate))){
+        if (daysOfMonth.get(position).equals(date(selectedDate)))
+        {
 
             holder.dayOfMonth.setBackgroundResource(R.drawable.circle);
-        }
 
+        }
     }
 
 
