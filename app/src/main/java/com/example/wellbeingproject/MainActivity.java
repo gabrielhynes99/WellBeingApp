@@ -6,13 +6,18 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.Toolbar;
+import android.speech.tts.TextToSpeech;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    public TextToSpeech t1;
     private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +33,23 @@ public class MainActivity extends AppCompatActivity {
         CardView wellbeing = findViewById(R.id.wellbeing_home);
         CardView activities = findViewById(R.id.activities_home);
         CardView tracker = findViewById(R.id.tracker_home);
+        final ImageView tts_icon = findViewById(R.id.tts_icon);
+
+        t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+                    tts_icon.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            String data = "hello";
+                            t1.speak(data, TextToSpeech.QUEUE_FLUSH, null, null);
+                        }
+                    });
+                }
+            }
+        });
 
         //to access the back button
         backbutton.setOnClickListener(new View.OnClickListener() {
@@ -118,6 +140,5 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 }
