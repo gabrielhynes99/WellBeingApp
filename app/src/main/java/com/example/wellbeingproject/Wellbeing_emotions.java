@@ -44,6 +44,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "happy";
+                Wellbeing.feeling_report = "happy";
                 startActivity(intent);
             }
         });
@@ -54,6 +55,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "good";
+                Wellbeing.feeling_report = "good";
                 startActivity(intent);
             }
         });
@@ -64,6 +66,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "okay";
+                Wellbeing.feeling_report = "okay";
                 startActivity(intent);
             }
         });
@@ -74,6 +77,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "bad";
+                Wellbeing.feeling_report = "bad";
                 startActivity(intent);
             }
         });
@@ -84,6 +88,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "sad";
+                Wellbeing.feeling_report = "sad";
                 startActivity(intent);
             }
         });
@@ -94,6 +99,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "sick";
+                Wellbeing.feeling_report = "sick";
                 startActivity(intent);
             }
         });
@@ -104,6 +110,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "angry";
+                Wellbeing.feeling_report = "angry";
                 startActivity(intent);
             }
         });
@@ -114,6 +121,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "anxious";
+                Wellbeing.feeling_report = "anxious";
                 startActivity(intent);
             }
         });

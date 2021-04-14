@@ -13,10 +13,16 @@ import androidx.cardview.widget.CardView;
 
 public class Wellbeing extends AppCompatActivity {
     private Toolbar toolbar;
+    public static String day_report;
+    public static String feeling_report;
+    public static String today_report;
+    public static String aboutday_report;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.wellbeing);
+        aboutday_report = "";
 
         ImageView backbutton = findViewById(R.id.back_button);
 
@@ -39,6 +45,7 @@ public class Wellbeing extends AppCompatActivity {
         reallyGood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                day_report = "really good";
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }
@@ -48,6 +55,7 @@ public class Wellbeing extends AppCompatActivity {
         good.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                day_report = "good";
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }
@@ -57,6 +65,7 @@ public class Wellbeing extends AppCompatActivity {
         okay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                day_report = "okay";
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }
@@ -66,6 +75,7 @@ public class Wellbeing extends AppCompatActivity {
         bad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                day_report = "bad";
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }
@@ -75,6 +85,7 @@ public class Wellbeing extends AppCompatActivity {
         reallyBad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                day_report = "really bad";
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }

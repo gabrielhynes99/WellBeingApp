@@ -46,14 +46,18 @@ public class Wellbeing_moveto_report extends AppCompatActivity {
         no_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Onsubreport(v);
                 Intent intent = new Intent(Wellbeing_moveto_report.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
 
             }
         });
+    }
 
-
-
+    public void Onsubreport(View view) {
+        String type = "subreport";
+        Databaseworker DBWorker = new Databaseworker(this);
+        DBWorker.execute(type, Login.userID, Wellbeing.day_report, Wellbeing.feeling_report, Wellbeing.today_report, Wellbeing.aboutday_report, MainActivity.date);
     }
 }

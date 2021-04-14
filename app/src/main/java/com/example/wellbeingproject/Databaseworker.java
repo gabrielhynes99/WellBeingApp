@@ -30,6 +30,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
         //checks first string which is passed when accessing database
         String type = params[0];
         String login_url = "https://sjogwellbeingapp.com/login.php";
+        String subreport_url = "https://sjogwellbeingapp.com/subreport.php";
         //if the param is equal to login it will proceed with login function
         if(type.equals("login")) {
             //establish connection with database
@@ -69,6 +70,52 @@ public class Databaseworker extends AsyncTask<String, String, String> {
                 e.printStackTrace();
             }
         }
+        else if(type.equals("subreport")) {
+            //establish connection with database
+            try {
+                String userId = params[1];
+                String day_report = params[2];
+                String feeling_report = params[3];
+                String today_report = params[4];
+                String aboutday_report = params[5];
+                String date = params[6];
+                URL url = new URL(subreport_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                //output stream to send to database
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("userId", "UTF-8") +"="+URLEncoder.encode(userId, "UTF-8")+"&"
+                        +URLEncoder.encode("day_report", "UTF-8") +"="+URLEncoder.encode(day_report, "UTF-8")+"&"
+                        +URLEncoder.encode("feeling_report", "UTF-8") +"="+URLEncoder.encode(feeling_report, "UTF-8")+"&"
+                        +URLEncoder.encode("today_report", "UTF-8") +"="+URLEncoder.encode(today_report, "UTF-8")+"&"
+                        +URLEncoder.encode("aboutday_report", "UTF-8") +"="+URLEncoder.encode(aboutday_report, "UTF-8")+"&"
+                        +URLEncoder.encode("date", "UTF-8") +"="+URLEncoder.encode(date, "UTF-8");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                //input stream to recieve from database
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                String reportresult="";
+                String line="";
+                //reads the response from server
+                while((line = bufferedReader.readLine())!= null) {
+                    reportresult += line;
+                }
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return reportresult;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         return null;
     }
 
@@ -83,6 +130,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
         if(!result.equals("invalid username / password"))
         {
             Login.logged_in = true;
+            Login.userID = result;
         }
         alertDialog.setMessage(result);
         alertDialog.show();

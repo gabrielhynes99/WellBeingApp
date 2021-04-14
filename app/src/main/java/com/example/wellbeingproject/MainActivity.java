@@ -11,18 +11,24 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 import android.speech.tts.TextToSpeech;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     public TextToSpeech t1;
     private Toolbar toolbar;
+    public static String date;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
         //home and mentor references
         ImageView backbutton = findViewById(R.id.back_button);

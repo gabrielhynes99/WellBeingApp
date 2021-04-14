@@ -14,12 +14,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
     public static boolean logged_in;
+    public static String userID;
     EditText ETusername, ETpassword;
     Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         logged_in = false;
+        userID = "";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
