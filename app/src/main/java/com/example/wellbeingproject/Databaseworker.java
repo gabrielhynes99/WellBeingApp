@@ -80,7 +80,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
 
     @Override
     protected void onPostExecute(String result) {
-        if(result.equals("loggedin"))
+        if(!result.equals("invalid username / password"))
         {
             Login.logged_in = true;
         }
