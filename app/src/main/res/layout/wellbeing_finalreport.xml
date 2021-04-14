@@ -51,6 +51,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:id="@+id/finalreportText"
                 android:layout_width="307dp"
                 android:layout_height="149dp"
                 android:hint="Type here...">

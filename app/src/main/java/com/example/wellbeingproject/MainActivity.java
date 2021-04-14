@@ -11,17 +11,24 @@ import android.widget.ImageView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 import android.speech.tts.TextToSpeech;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
     public TextToSpeech t1;
     private Toolbar toolbar;
+    public static String date;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
 
         //home and mentor references
         ImageView backbutton = findViewById(R.id.back_button);
@@ -40,11 +47,24 @@ public class MainActivity extends AppCompatActivity {
             public void onInit(int status) {
                 if (status != TextToSpeech.ERROR) {
                     t1.setLanguage(Locale.UK);
+
                     tts_icon.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            String data = "hello";
-                            t1.speak(data, TextToSpeech.QUEUE_FLUSH, null, null);
+                            int i = 0;
+                            while(i == 0) {
+                                t1.speak("Calender", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(1000, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Support", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(1000, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Wellbeing", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(1000, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Activities", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(1000, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Tracker", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(1000, TextToSpeech.QUEUE_ADD, null);
+                                i++;
+                            }
                         }
                     });
                 }

@@ -8,17 +8,20 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import android.widget.Toolbar;
+import android.view.View.OnKeyListener;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
     public static boolean logged_in;
+    public static String userID;
     EditText ETusername, ETpassword;
     Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         logged_in = false;
+        userID = "";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
@@ -43,7 +46,6 @@ public class Login extends AppCompatActivity {
                 Loggedin();
             }
         },500);
-
     }
 
     //forward to home page
