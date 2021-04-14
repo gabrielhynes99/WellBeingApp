@@ -1,8 +1,10 @@
 package com.example.wellbeingproject;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -11,18 +13,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
+import com.example.wellbeingproject.Database.ProjectDatabaseManager;
+
 
 public class Calendar extends AppCompatActivity implements CalendarAdapter.OnItemListener {
     private Toolbar toolbar;
-    private TextView monthYearText;
+    public TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+
+    //Creating an Instance of the ProjectDatabaseManager mydb and a Cursor
+    ProjectDatabaseManager mydb;
+    Cursor myCursor;
+
 
 
     @Override
@@ -43,6 +51,30 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
                 finish();
             }
         });
+
+
+        // Initialising mydb
+        mydb = new ProjectDatabaseManager(this);
+        // opening database
+        mydb.open();
+
+        //mydb.insertItems("Monday","0", "Lamh","10:00a,");
+
+        // Initialising my cursor with all the items in my database
+        myCursor = mydb.getAllItems();
+
+        // Creating and Initialising my list view with the
+        // List view i want to populate in my xml file
+        ListView list = findViewById(R.id.list);
+
+        //Making an instance of my custom adapter
+        //this is where the list view gets populated
+        CustomAdapter customAdapter = new CustomAdapter(this, myCursor);
+        list.setAdapter(customAdapter);
+        customAdapter.changeCursor(myCursor);
+
+        //database is closed
+        mydb.close();
 
 
     }//EndOfOnCreate
@@ -112,6 +144,12 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         return date.format(formatter);
     }
 
+    private String day(LocalDate date){
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d");
+        return date.format(formatter);
+    }
+
     public void previousMonthAction(View view){
 
         selectedDate = selectedDate.minusMonths(1);
@@ -130,6 +168,10 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     public void onItemClick(int position, String dayText) {
 
         if(dayText.equals(""))
+        {
+            //Nothing
+        }
+        else
         {
             String message = "Selected Date " + dayText + " " + monthYearFromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();

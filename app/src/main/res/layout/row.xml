@@ -12,18 +12,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:textAlignment="center"
+        android:text="o"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#F32121"
-        android:textSize="30sp"
-        android:textStyle="bold|italic" />
+        android:textSize="30sp" />
 
-    <TextView
+
+    <ImageView
         android:id="@+id/activityImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:text="@string/leftArrow"
-        android:textStyle="bold"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        app:srcCompat="@drawable/work"
         android:textAlignment="gravity"/>
 
     <TextView
@@ -31,18 +30,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:text="Jobs Club"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#673AB7" />
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="20dp"
+        android:text="10.00am"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#00BCD4" />
+        android:textColor="@color/gray" />
 
 
 

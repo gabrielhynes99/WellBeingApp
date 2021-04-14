@@ -1,6 +1,5 @@
 package com.example.wellbeingproject;
 
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,6 +58,12 @@ public class CalendarAdapter extends RecyclerView.Adapter<CalendarViewHolder> {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d");
         return date.format(formatter);
+    }
+
+    private String dateMonth(LocalDate dateMonth){
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("e MMMM d");
+        return dateMonth.format(formatter);
     }
 
     public interface OnItemListener{

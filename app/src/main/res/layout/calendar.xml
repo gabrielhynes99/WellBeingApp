@@ -213,7 +213,6 @@
     </GridLayout>
 
 
-
     <TextView
         android:id="@+id/current_day"
         android:layout_width="wrap_content"
@@ -224,230 +223,17 @@
         android:textStyle="bold"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
-
-
-        <TextView
-            android:id="@+id/dot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:textAlignment="center"
-            android:text="o"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#F32121"
-            android:textSize="30sp" />
-
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            app:srcCompat="@drawable/work"
-            android:textAlignment="gravity"/>
-
-        <TextView
-            android:id="@+id/activityName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Jobs Club             "
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="10.00am"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/gray" />
-
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/div1"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_height="3dp"
-        android:background="@color/gray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:id="@+id/dot2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:textAlignment="center"
-            android:text="o"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#F32121"
-            android:textSize="30sp" />
-
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/lamh" />
-
-        <TextView
-            android:id="@+id/activityName2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Lamh                     "
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/time2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="11.00am"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/gray" />
-
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/div2"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_height="3dp"
-        android:background="@color/gray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:id="@+id/dot3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:textAlignment="center"
-            android:text="o"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#F32121"
-            android:textSize="30sp" />
-
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/karate2" />
-
-        <TextView
-            android:id="@+id/activityName3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Karate                   "
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/time3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="12.00am"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/gray" />
-
-
-    </LinearLayout>
-
-    <View
-        android:id="@+id/div3"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_height="3dp"
-        android:background="@color/gray" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
-
-
-        <TextView
-            android:id="@+id/dot4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:textAlignment="center"
-            android:text="o"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#F32121"
-            android:textSize="30sp" />
-
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            app:srcCompat="@drawable/dance" />
-
-        <TextView
-            android:id="@+id/activityName4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:text="Friday Mini Disco"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/time4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="13.00pm"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="@color/gray" />
-
-
-    </LinearLayout>
+        android:layout_marginTop="56dp"
+        android:background="#FFFFFF"
+        android:divider="#00BCD4"
+        android:dividerHeight="1dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <View
         android:id="@+id/div4"
