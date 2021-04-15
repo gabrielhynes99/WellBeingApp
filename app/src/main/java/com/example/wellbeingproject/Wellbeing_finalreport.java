@@ -55,6 +55,7 @@ public class Wellbeing_finalreport extends AppCompatActivity {
     public void Onsubreport(View view) {
         String type = "subreport";
         Databaseworker DBWorker = new Databaseworker(this);
-        DBWorker.execute(type, MainActivity.userID, Wellbeing.day_report, Wellbeing.feeling_report, Wellbeing.today_report, Wellbeing.aboutday_report, MainActivity.date);
+
+        DBWorker.execute(type, MainActivity.username, Wellbeing.day_report, Wellbeing.feeling_report, Wellbeing.today_report, Wellbeing.aboutday_report, MainActivity.date);
     }
 }

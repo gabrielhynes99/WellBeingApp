@@ -27,12 +27,11 @@ public class Login extends AppCompatActivity {
         ETusername = findViewById(R.id.username);
         ETpassword = findViewById(R.id.password);
         login = findViewById(R.id.login);
-
     }
 
     public void OnLogin(View view) {
-
         String username = ETusername.getText().toString();
+        MainActivity.username = username;
         String password = ETpassword.getText().toString();
         String type = "login";
         Databaseworker DBWorker = new Databaseworker(this);

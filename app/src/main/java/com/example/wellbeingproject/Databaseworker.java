@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -74,7 +73,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
         else if(type.equals("subreport")) {
             //establish connection with database
             try {
-                String userId = params[1];
+                String username = params[1];
                 String day_report = params[2];
                 String feeling_report = params[3];
                 String today_report = params[4];
@@ -88,7 +87,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
                 //output stream to send to database
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("userId", "UTF-8") +"="+URLEncoder.encode(userId, "UTF-8")+"&"
+                String post_data = URLEncoder.encode("username", "UTF-8") +"="+URLEncoder.encode(username, "UTF-8")+"&"
                         +URLEncoder.encode("day_report", "UTF-8") +"="+URLEncoder.encode(day_report, "UTF-8")+"&"
                         +URLEncoder.encode("feeling_report", "UTF-8") +"="+URLEncoder.encode(feeling_report, "UTF-8")+"&"
                         +URLEncoder.encode("today_report", "UTF-8") +"="+URLEncoder.encode(today_report, "UTF-8")+"&"
@@ -135,7 +134,6 @@ public class Databaseworker extends AsyncTask<String, String, String> {
         alertDialog.setMessage(result);
         alertDialog.show();
         Toast.makeText(context.getApplicationContext(),result, Toast.LENGTH_SHORT).show();
-        MainActivity.userID = result;
     }
 
     @Override
