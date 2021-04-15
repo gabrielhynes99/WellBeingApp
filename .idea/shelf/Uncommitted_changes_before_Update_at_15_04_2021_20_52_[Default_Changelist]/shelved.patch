@@ -1,0 +1,197 @@
+Index: app/src/main/res/layout/row.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"fill_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:orientation=\"horizontal\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/dot\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"5dp\"\r\n        android:textAlignment=\"center\"\r\n        android:text=\"o\"\r\n        android:textAppearance=\"@style/TextAppearance.AppCompat.Large\"\r\n        android:textColor=\"#F32121\"\r\n        android:textSize=\"30sp\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/activityName\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"10dp\"\r\n        android:text=\"Jobs Club\"\r\n        android:textAlignment=\"center\"\r\n        android:textAppearance=\"@style/TextAppearance.AppCompat.Large\"\r\n        android:textColor=\"@color/black\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/time\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"20dp\"\r\n        android:text=\"10.00am\"\r\n        android:textAlignment=\"center\"\r\n        android:textAppearance=\"@style/TextAppearance.AppCompat.Large\"\r\n        android:textColor=\"@color/gray\" />\r\n\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/row.xml	(revision 79d86d17f8d3ce079a9ff7f32d099d17eab94001)
++++ app/src/main/res/layout/row.xml	(date 1618499019193)
+@@ -17,6 +17,15 @@
+         android:textColor="#F32121"
+         android:textSize="30sp" />
+ 
++
++    <ImageView
++        android:id="@+id/imageView"
++        android:layout_width="50dp"
++        android:layout_height="45dp"
++        app:srcCompat="@drawable/work"
++        android:textAlignment="gravity"/>
++
++
+     <TextView
+         android:id="@+id/activityName"
+         android:layout_width="wrap_content"
+@@ -24,7 +33,7 @@
+         android:layout_marginStart="10dp"
+         android:text="Jobs Club"
+         android:textAlignment="center"
+-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
++        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+         android:textColor="@color/black" />
+ 
+     <TextView
+@@ -34,7 +43,7 @@
+         android:layout_marginStart="20dp"
+         android:text="10.00am"
+         android:textAlignment="center"
+-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
++        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+         android:textColor="@color/gray" />
+ 
+ 
+Index: app/src/main/java/com/example/wellbeingproject/CustomAdapter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.wellbeingproject;\r\n\r\nimport android.content.Context;\r\nimport android.database.Cursor;\r\nimport android.view.LayoutInflater;\r\nimport android.view.View;\r\nimport android.view.ViewGroup;\r\nimport android.widget.CursorAdapter;\r\nimport android.widget.TextView;\r\n\r\n\r\n/************************************************************************************\r\n* Refrence:                                                                          *\r\n* This code is based on code i found online, the original code can be found at this  *\r\n* site: https://guides.codepath.com/android/Using-an-ArrayAdapter-with-ListView      *\r\n* I modified the code to work for my app                                             *\r\n ************************************************************************************/\r\n\r\npublic class CustomAdapter extends CursorAdapter {\r\n    public CustomAdapter(Context context , Cursor cursor) {\r\n        super(context, cursor,0);\r\n    }\r\n\r\n    // The newView method is where i inflate a new view and return said view.\r\n    @Override\r\n    public View newView(Context context, Cursor cursor, ViewGroup parent) {\r\n        return LayoutInflater.from(context).inflate(R.layout.row, parent, false);\r\n    }\r\n\r\n    // The bindView method is where I join my textViews from the\r\n    // row.xml to textViews i make in this class\r\n    @Override\r\n    public void bindView(View view, Context context, Cursor cursor) {\r\n\r\n        // Find fields to populate in inflated template\r\n        TextView t_activityName = (TextView) view.findViewById(R.id.activityName);\r\n        TextView t_time = (TextView) view.findViewById(R.id.time);\r\n\r\n        // Extract properties from cursor\r\n        String activityName = cursor.getString(cursor.getColumnIndexOrThrow(\"name\"));\r\n        String time = cursor.getString(cursor.getColumnIndexOrThrow(\"time\"));\r\n\r\n        // Populate fields with extracted properties\r\n        //setting Image view\r\n\r\n        //setting the text view\r\n        t_activityName.setText(activityName);\r\n        t_time.setText(time);\r\n\r\n\r\n\r\n\r\n\r\n    }//end of bind view\r\n\r\n}//end of CustomAdapter class
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/wellbeingproject/CustomAdapter.java	(revision 79d86d17f8d3ce079a9ff7f32d099d17eab94001)
++++ app/src/main/java/com/example/wellbeingproject/CustomAdapter.java	(date 1618498684975)
+@@ -6,6 +6,7 @@
+ import android.view.View;
+ import android.view.ViewGroup;
+ import android.widget.CursorAdapter;
++import android.widget.ImageView;
+ import android.widget.TextView;
+ 
+ 
+@@ -33,6 +34,7 @@
+     public void bindView(View view, Context context, Cursor cursor) {
+ 
+         // Find fields to populate in inflated template
++        ImageView t_image = (ImageView) view.findViewById(R.id.imageView);
+         TextView t_activityName = (TextView) view.findViewById(R.id.activityName);
+         TextView t_time = (TextView) view.findViewById(R.id.time);
+ 
+@@ -47,6 +49,96 @@
+         t_activityName.setText(activityName);
+         t_time.setText(time);
+ 
++        if(activityName.equalsIgnoreCase("Rise and Shine Social")){
++
++            t_image.setImageResource(R.drawable.rands);
++
++        }else if(activityName.equalsIgnoreCase("Drama")){
++
++            t_image.setImageResource(R.drawable.drama);
++
++        }else if(activityName.equalsIgnoreCase("Yoga")){
++
++            t_image.setImageResource(R.drawable.yoga);
++
++        }else if(activityName.equalsIgnoreCase("Cookery with Louise")){
++
++            t_image.setImageResource(R.drawable.cookery);
++
++        }else if(activityName.equalsIgnoreCase("Quiz")){
++
++            t_image.setImageResource(R.drawable.quiz);
++
++        }else if(activityName.equalsIgnoreCase("Dance")){
++
++            t_image.setImageResource(R.drawable.dance12);
++
++        }else if(activityName.equalsIgnoreCase("Zumba")){
++
++            t_image.setImageResource(R.drawable.dance12);
++
++        }else if(activityName.equalsIgnoreCase("Sports")){
++
++            t_image.setImageResource(R.drawable.sportwhite);
++
++        }else if(activityName.equalsIgnoreCase("Story Corner")){
++
++            t_image.setImageResource(R.drawable.story);
++
++        }else if(activityName.equalsIgnoreCase("Sonas")){
++
++            t_image.setImageResource(R.drawable.sonas);
++
++        }else if(activityName.equalsIgnoreCase("Art With Emma")){
++
++            t_image.setImageResource(R.drawable.art);
++
++        }else if(activityName.equalsIgnoreCase("Operation Transformation")){
++
++            t_image.setImageResource(R.drawable.operation);
++
++        }else if(activityName.equalsIgnoreCase("Book Club")){
++
++            t_image.setImageResource(R.drawable.story);
++
++        }else if(activityName.equalsIgnoreCase("Gardening Group")){
++
++            t_image.setImageResource(R.drawable.gardening);
++
++        }else if(activityName.equalsIgnoreCase("Advocacy")){
++
++            t_image.setImageResource(R.drawable.advocacy);
++
++        }else if(activityName.equalsIgnoreCase("Choir")){
++
++            t_image.setImageResource(R.drawable.choir);
++
++        }else if(activityName.equalsIgnoreCase("Relaxation")){
++
++            t_image.setImageResource(R.drawable.relaxation);
++
++        }else if(activityName.equalsIgnoreCase("Jobs Club")){
++
++            t_image.setImageResource(R.drawable.work);
++
++        }else if(activityName.equalsIgnoreCase("Lámh")){
++
++            t_image.setImageResource(R.drawable.lamh);
++
++        }else if(activityName.equalsIgnoreCase("Karate")){
++
++            t_image.setImageResource(R.drawable.karate2);
++
++        }else if(activityName.equalsIgnoreCase("Mini Disco")){
++
++            t_image.setImageResource(R.drawable.dance);
++
++        }else if(activityName.equalsIgnoreCase("Evening Exercise With Paul")){
++
++            t_image.setImageResource(R.drawable.sportwhite);
++
++        }
++
+ 
+ 
+ 
+Index: app/src/main/java/com/example/wellbeingproject/Calendar.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.wellbeingproject;\r\n\r\nimport android.database.Cursor;\r\nimport android.os.Bundle;\r\nimport android.view.View;\r\nimport android.widget.ImageView;\r\nimport android.widget.ListView;\r\nimport android.widget.TextView;\r\nimport android.widget.Toast;\r\nimport android.widget.Toolbar;\r\n\r\nimport androidx.appcompat.app.AppCompatActivity;\r\nimport androidx.recyclerview.widget.GridLayoutManager;\r\nimport androidx.recyclerview.widget.RecyclerView;\r\n\r\nimport java.time.LocalDate;\r\nimport java.time.YearMonth;\r\nimport java.time.format.DateTimeFormatter;\r\nimport java.util.ArrayList;\r\n\r\nimport com.example.wellbeingproject.Database.ProjectDatabaseManager;\r\n\r\n\r\npublic class Calendar extends AppCompatActivity implements CalendarAdapter.OnItemListener {\r\n    private Toolbar toolbar;\r\n    public TextView monthYearText;\r\n    private RecyclerView calendarRecyclerView;\r\n    private LocalDate selectedDate;\r\n\r\n    //Creating an Instance of the ProjectDatabaseManager mydb and a Cursor\r\n    ProjectDatabaseManager mydb;\r\n    Cursor myCursor;\r\n\r\n\r\n\r\n    @Override\r\n    protected void onCreate(Bundle savedInstanceState) {\r\n        super.onCreate(savedInstanceState);\r\n        setContentView(R.layout.calendar);\r\n        initWidgets();\r\n        selectedDate = LocalDate.now();\r\n        setMonthView();\r\n        setCurDate();\r\n\r\n        ImageView backbutton = findViewById(R.id.back_button);\r\n\r\n        //to access the back button\r\n        backbutton.setOnClickListener(new View.OnClickListener() {\r\n            @Override\r\n            public void onClick(View v) {\r\n                finish();\r\n            }\r\n        });\r\n\r\n\r\n        // Initialising mydb\r\n        mydb = new ProjectDatabaseManager(this);\r\n        // opening database\r\n        mydb.open();\r\n\r\n\r\n        for(int i = 1; i < 29; i++){\r\n            mydb.deleteItems(i);\r\n        }\r\n\r\n\r\n        //Inserting Mondays Activities\r\n        mydb.insertItems(1,1,\"Monday\",  \"Rise and Shine Social\", \"9:30am\");\r\n        mydb.insertItems(2,1,\"Monday\",  \"Drama\", \"10:00am\");\r\n        mydb.insertItems(3,1,\"Monday\",  \"Yoga\", \"12:00pm\");\r\n        mydb.insertItems(4,1,\"Monday\",  \"Cookery with Louise\", \"1:00pm\");\r\n        mydb.insertItems(5,1,\"Monday\",  \"Quiz\", \"2:00pm\");\r\n\r\n        //Inserting Tuesdays Activities\r\n        mydb.insertItems(6,2,\"Tuesday\",  \"Rise and Shine Social\", \"9:30am\");\r\n        mydb.insertItems(7,2,\"Tuesday\",  \"Dance\", \"10:00am\");\r\n        mydb.insertItems(8,2,\"Tuesday\",  \"Zumba\", \"11:00am\");\r\n        mydb.insertItems(9,2,\"Tuesday\",  \"Sports(jersey Day)\", \"12:00pm\");\r\n        mydb.insertItems(10,2,\"Tuesday\",  \"Story Corner\", \"1:00pm\");\r\n        mydb.insertItems(11,2,\"Tuesday\",  \"Sonas\", \"2:00pm\");\r\n        mydb.insertItems(12,2,\"Tuesday\",  \"Evening Exercise With Paul\", \"6:00pm\");\r\n\r\n        //Inserting Wednesday Activities\r\n        mydb.insertItems(13,3,\"Wednesday\",\"Rise and Shine Social\",\"9:30am\");\r\n        mydb.insertItems(14,3,\"Wednesday\",\"Art with Emma\",\"10:00am\");\r\n        mydb.insertItems(15,3,\"Wednesday\",\"Operation Transformation\",\"11:00am\");\r\n        mydb.insertItems(16,3,\"Wednesday\",\"Sports\",\"12:00am\");\r\n        mydb.insertItems(17,3,\"Wednesday\",\"Book Club\",\"1.00pm\");\r\n        mydb.insertItems(18,3,\"Wednesday\",\"Gardening Group\",\"2.00pm\");\r\n\r\n        //Inserting Thursday Activities\r\n        mydb.insertItems(19,4,\"Thursday\",\"Rise and Shine Social\",\"9:30am\");\r\n        mydb.insertItems(20,4,\"Thursday\",\"Advocacy\",\"10.00am\");\r\n        mydb.insertItems(21,4,\"Thursday\",\"Choir\",\"11.00am\");\r\n        mydb.insertItems(22,4,\"Thursday\",\"Sports\",\"12.00pm\");\r\n        mydb.insertItems(23,4,\"Thursday\",\"Relaxation\",\"1.30pm\");\r\n        mydb.insertItems(24,4,\"Thursday\",\"Evening Exercise with Paul\",\"6.00pm\");\r\n\r\n\r\n        //Inserting Friday Activities\r\n        mydb.insertItems(25,5,\"Friday\",\"Rise and Shine Social\",\"9:30am\");\r\n        mydb.insertItems(26,5,\"Friday\",\"jobs Club\",\"10:00am\");\r\n        mydb.insertItems(27,5,\"Friday\",\"Lámh\",\"11.00am\");\r\n        mydb.insertItems(28,5,\"Friday\",\"Karate\",\"12.00pm\");\r\n        mydb.insertItems(29,5,\"Friday\",\"Mini Disco\",\"1.00pm\");\r\n\r\n\r\n\r\n        // Initialising my cursor with all the items in my database\r\n        //for that day.\r\n\r\n        switch (dayOfWeek(selectedDate)) {\r\n            case \"Monday\":\r\n                myCursor = mydb.getAllItems2(1);\r\n                break;\r\n            case \"Tuesday\":\r\n                myCursor = mydb.getAllItems2(2);\r\n                break;\r\n            case \"Wedensday\":\r\n                myCursor = mydb.getAllItems2(3);\r\n                break;\r\n            case \"Thursday\":\r\n                myCursor = mydb.getAllItems2(4);\r\n                break;\r\n            case \"Friday\":\r\n                myCursor = mydb.getAllItems2(5);\r\n\r\n                break;\r\n        }//end of switch\r\n\r\n        // Creating and Initialising my list view with the\r\n        // List view i want to populate in my xml file\r\n        ListView list = findViewById(R.id.list);\r\n\r\n        //Making an instance of my custom adapter\r\n        //this is where the list view gets populated\r\n        CustomAdapter customAdapter = new CustomAdapter(this, myCursor);\r\n        list.setAdapter(customAdapter);\r\n        customAdapter.changeCursor(myCursor);\r\n\r\n        //database is closed\r\n        mydb.close();\r\n\r\n\r\n    }//EndOfOnCreate\r\n\r\n\r\n    private void initWidgets() {\r\n\r\n        calendarRecyclerView = findViewById(R.id.calendarRecyclerView);\r\n        monthYearText = findViewById(R.id.monthYearTV);\r\n    }\r\n\r\n    private void setCurDate() {\r\n\r\n        TextView current_date = findViewById(R.id.current_day);\r\n        String date = \"Today \"+dayMonthDateFromDate(selectedDate);\r\n        current_date.setText(date);\r\n    }\r\n\r\n    private void setMonthView() {\r\n\r\n        monthYearText.setText(monthYearFromDate(selectedDate));\r\n        ArrayList<String> daysInMonth = daysInMonthArray(selectedDate);\r\n\r\n        CalendarAdapter calendarAdapter = new CalendarAdapter(daysInMonth, this);\r\n        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(getApplicationContext(), 7);\r\n        calendarRecyclerView.setLayoutManager(layoutManager);\r\n        calendarRecyclerView.setAdapter(calendarAdapter);\r\n    }\r\n\r\n    private ArrayList<String> daysInMonthArray(LocalDate date) {\r\n\r\n        ArrayList<String> daysInMonthArray = new ArrayList<>();\r\n        YearMonth yearMonth = YearMonth.from(date);\r\n\r\n        int daysInMonth = yearMonth.lengthOfMonth();\r\n\r\n        LocalDate firstOfMonth = selectedDate.withDayOfMonth(1);\r\n        int dayOfWeek = firstOfMonth.getDayOfWeek().getValue();\r\n\r\n\r\n        //This for loop fills the days in the month array\r\n        //i = 2 starts the week on a monday instead of a sunday\r\n        for(int i = 2; i<=42; i++){\r\n\r\n            if(i <= dayOfWeek || i > daysInMonth + dayOfWeek)\r\n            {\r\n                daysInMonthArray.add(\"\");\r\n            }\r\n            else\r\n            {\r\n                daysInMonthArray.add(String.valueOf((i - dayOfWeek)));\r\n            }\r\n        }\r\n        return daysInMonthArray;\r\n\r\n    }\r\n\r\n    private String monthYearFromDate(LocalDate date){\r\n\r\n        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\"MMMM yyyy\");\r\n        return date.format(formatter);\r\n    }\r\n\r\n    private String dayMonthDateFromDate(LocalDate date){\r\n\r\n        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\"EEEE MMMM d\");\r\n        return date.format(formatter);\r\n    }\r\n\r\n    private String dayOfWeek(LocalDate date){\r\n\r\n        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\"EEEE\");\r\n        return date.format(formatter);\r\n    }\r\n\r\n    private String day(LocalDate date){\r\n\r\n        DateTimeFormatter formatter = DateTimeFormatter.ofPattern(\"d\");\r\n        return date.format(formatter);\r\n    }\r\n\r\n    public void previousMonthAction(View view){\r\n\r\n        selectedDate = selectedDate.minusMonths(1);\r\n        setMonthView();\r\n\r\n    }\r\n\r\n    public void nextMonthAction(View view){\r\n\r\n        selectedDate = selectedDate.plusMonths(1);\r\n        setMonthView();\r\n\r\n    }\r\n\r\n    @Override\r\n    public void onItemClick(int position, String dayText) {\r\n\r\n        if(dayText.equals(\"\"))\r\n        {\r\n            //Nothing\r\n        }\r\n        else\r\n        {\r\n            String message = \"Selected Date \" + dayText + \" \" + monthYearFromDate(selectedDate);\r\n            Toast.makeText(this, message, Toast.LENGTH_LONG).show();\r\n        }\r\n\r\n\r\n\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/wellbeingproject/Calendar.java	(revision 79d86d17f8d3ce079a9ff7f32d099d17eab94001)
++++ app/src/main/java/com/example/wellbeingproject/Calendar.java	(date 1618500125371)
+@@ -116,7 +116,7 @@
+             case "Tuesday":
+                 myCursor = mydb.getAllItems2(2);
+                 break;
+-            case "Wedensday":
++            case "Wednesday":
+                 myCursor = mydb.getAllItems2(3);
+                 break;
+             case "Thursday":
+@@ -244,12 +244,12 @@
+         }
+         else
+         {
++
+             String message = "Selected Date " + dayText + " " + monthYearFromDate(selectedDate);
+             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
+         }
+ 
+ 
+-
+     }
+ }
+ 

@@ -141,7 +141,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
             case "Tuesday":
                 myCursor = mydb.getAllItems2(2);
                 break;
-            case "Wedensday":
+            case "Wednesday":
                 myCursor = mydb.getAllItems2(3);
                 break;
             case "Thursday":
@@ -269,10 +269,10 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         }
         else
         {
+
             String message = "Selected Date " + dayText + " " + monthYearFromDate(selectedDate);
             Toast.makeText(this, message, Toast.LENGTH_LONG).show();
         }
-
 
 
     }
