@@ -2,6 +2,7 @@ package com.example.wellbeingproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,10 +14,13 @@ import android.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import java.util.Locale;
+
 import static com.example.wellbeingproject.Wellbeing_emotions.emotion;
 
 public class Wellbeing_finalreport extends AppCompatActivity {
     private Toolbar toolbar;
+    public TextToSpeech t1;
     String finalreport;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,28 @@ public class Wellbeing_finalreport extends AppCompatActivity {
         //edittext
         final EditText freport = findViewById(R.id.finalreportText);
 
+        //tts button
+        final ImageView tts_icon = findViewById(R.id.tts_icon);
+
+        t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+
+                    tts_icon.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int i = 0;
+                            while(i == 0) {
+                                t1.speak("Say more about your day below", TextToSpeech.QUEUE_ADD, null, null);
+                                i++;
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
         //to access the back button
         backbutton.setOnClickListener(new View.OnClickListener() {

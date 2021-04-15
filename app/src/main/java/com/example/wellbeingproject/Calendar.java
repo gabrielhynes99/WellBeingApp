@@ -2,6 +2,7 @@ package com.example.wellbeingproject;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -17,6 +18,7 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import com.example.wellbeingproject.Database.ProjectDatabaseManager;
 
@@ -26,6 +28,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     public TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private LocalDate selectedDate;
+    public TextToSpeech t1;
 
     //Creating an Instance of the ProjectDatabaseManager mydb and a Cursor
     ProjectDatabaseManager mydb;
@@ -52,6 +55,28 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
             }
         });
 
+        final ImageView tts_icon = findViewById(R.id.tts_icon);
+
+
+        t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+
+                    tts_icon.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int i = 0;
+                            while(i == 0) {
+                                t1.speak("Today is "+dayMonthDateFromDate(selectedDate), TextToSpeech.QUEUE_ADD, null, null);
+                                i++;
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
         // Initialising mydb
         mydb = new ProjectDatabaseManager(this);

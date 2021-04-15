@@ -6,6 +6,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -23,8 +25,12 @@ public class Tracker extends AppCompatActivity {
     private Toolbar toolbar;
     public TextToSpeech ttstracker;
 
+    EditText stepsET, waterET;
+    Button submit_tracker_report_button;
+
     TextView sleep,wake;
     int shour,whour,sminute,wminute;
+    String steps, water, sleepingT;
 
 
     @Override
@@ -70,11 +76,16 @@ public class Tracker extends AppCompatActivity {
         });
 
 
-
-
         //assign variables
         sleep = findViewById(R.id.sleep);
         wake = findViewById(R.id.wake);
+
+        stepsET = findViewById(R.id.steps);
+        steps = stepsET.getText().toString();
+        waterET = findViewById(R.id.water);
+        water = waterET.getText().toString();
+
+        submit_tracker_report_button = findViewById(R.id.submit_tracker_report_button);
 
         sleep.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,5 +152,39 @@ public class Tracker extends AppCompatActivity {
                 timePickerDialog.show();
             }
         });
+
+        submit_tracker_report_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Onsubtrackreport(v);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                finish();
+            }
+        });
+    }
+
+    public void Onsubtrackreport(View view) throws ParseException {
+        sleepingT = calculateTime();
+        String type = "tracker";
+        Databaseworker DBWorker = new Databaseworker(this);
+        DBWorker.execute(type, MainActivity.username, sleepingT, water, steps, MainActivity.date);
+    }
+
+    public String calculateTime() throws ParseException {
+
+        String wtime = whour +":"+ wminute;
+        String stime = shour +":"+ sminute;
+
+        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
+        Date date1 = format.parse(wtime);
+        Date date2 = format.parse(stime);
+        long time = date2.getTime() - date1.getTime();
+        String totaltime = time+"";
+
+        return  totaltime;
+
     }
 }
