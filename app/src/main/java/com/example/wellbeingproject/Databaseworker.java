@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import java.io.BufferedReader;
@@ -130,11 +131,11 @@ public class Databaseworker extends AsyncTask<String, String, String> {
         if(!result.equals("invalid username / password"))
         {
             Login.logged_in = true;
-            Login.userID = result;
         }
         alertDialog.setMessage(result);
         alertDialog.show();
         Toast.makeText(context.getApplicationContext(),result, Toast.LENGTH_SHORT).show();
+        MainActivity.userID = result;
     }
 
     @Override
