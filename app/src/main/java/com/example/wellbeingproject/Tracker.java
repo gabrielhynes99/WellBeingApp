@@ -32,7 +32,6 @@ public class Tracker extends AppCompatActivity {
     int shour,whour,sminute,wminute;
     String steps, water, sleepingT;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,9 +80,7 @@ public class Tracker extends AppCompatActivity {
         wake = findViewById(R.id.wake);
 
         stepsET = findViewById(R.id.steps);
-        steps = stepsET.getText().toString();
         waterET = findViewById(R.id.water);
-        water = waterET.getText().toString();
 
         submit_tracker_report_button = findViewById(R.id.submit_tracker_report_button);
 
@@ -164,6 +161,8 @@ public class Tracker extends AppCompatActivity {
 
     public void Onsubtrackreport(View view) {
         sleepingT = calculateTime();
+        steps = stepsET.getText().toString();
+        water = waterET.getText().toString();
         String type = "tracker";
         Databaseworker DBWorker = new Databaseworker(this);
         DBWorker.execute(type, MainActivity.username, sleepingT, water, steps, MainActivity.date);
@@ -173,19 +172,21 @@ public class Tracker extends AppCompatActivity {
         String totaltime;
         int thour = 0;
         int tmin = 0;
+        String totalmin = "";
+        String totalhour = "";
 
-        if(wminute > sminute) {
-            tmin = wminute - sminute;
+        tmin = (wminute - sminute) % 60;
+        thour = (whour - shour + 24) % 24;
+
+        if(tmin == 0 | tmin == 1 | tmin == 2 | tmin == 3 | tmin == 4 | tmin == 5
+                | tmin == 6 | tmin == 7 | tmin == 8 | tmin == 9) {
+            totalmin = "0"+tmin;
         }
-        else if(wminute < sminute) {
-            whour = whour - 1;
-            wminute = wminute + 60;
-            tmin = wminute - sminute;
+        if(thour == 0 | thour == 1 | thour == 2 | thour == 3 | thour == 4 | thour == 5
+                | thour == 6 | thour == 7 | thour == 8 | thour == 9) {
+            totalhour = "0"+thour;
         }
-
-        thour = whour - shour;
-
-        totaltime = thour + ":" + tmin;
+        totaltime = totalhour + ":" + totalmin;
         return totaltime;
 
     }
