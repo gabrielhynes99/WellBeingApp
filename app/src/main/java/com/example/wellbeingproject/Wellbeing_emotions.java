@@ -2,6 +2,7 @@ package com.example.wellbeingproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -10,9 +11,13 @@ import android.widget.Toolbar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import java.util.Locale;
+
 public class Wellbeing_emotions extends AppCompatActivity {
     private Toolbar toolbar;
     public static String emotion;
+    public TextToSpeech t1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +34,41 @@ public class Wellbeing_emotions extends AppCompatActivity {
         CardView sick = findViewById(R.id.wellbeing_sickE);
         final CardView angry = findViewById(R.id.wellbeing_angryE);
         CardView anxious = findViewById(R.id.wellbeing_anxiousE);
+        final ImageView tts_icon = findViewById(R.id.tts_icon);
+
+        t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status != TextToSpeech.ERROR) {
+                    t1.setLanguage(Locale.UK);
+
+                    tts_icon.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int i = 0;
+                            while(i == 0) {
+                                t1.speak("Happy", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Good", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Okay", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Bad", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Sad", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Sick", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Angry", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.speak("Anxious", TextToSpeech.QUEUE_ADD, null, null);
+                                i++;
+                            }
+                        }
+                    });
+                }
+            }
+        });
 
         //to access the back button
         backbutton.setOnClickListener(new View.OnClickListener() {
