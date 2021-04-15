@@ -73,7 +73,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How much water did you drink today?"
+                android:text="How many glasses of water did you drink today?"
                 android:layout_gravity="center"
                 android:textSize="25sp"
                 android:textAlignment="center"
@@ -164,17 +164,7 @@
                 />
         </LinearLayout>
     </GridLayout>
-    <Button
-        android:id="@+id/submit_tracker_report_button"
-        android:layout_gravity="right"
-        android:layout_marginRight="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20sp"
-        android:background="@android:color/holo_orange_light"
-        android:text="Submit"
-        android:textColor="@android:color/white"> </Button>
+
     <GridLayout
         android:columnCount="1"
         android:rowCount="1"
@@ -193,6 +183,15 @@
             android:layout_width="58dp"
             android:layout_height="51dp"
             app:srcCompat="@drawable/tts_symbol" />
+            <Button
+                android:id="@+id/submit_tracker_report_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".01"
+                android:background="@android:color/holo_orange_light"
+                android:text="Submit"
+                android:textColor="@android:color/white">
+            </Button>
         </LinearLayout>
     </GridLayout>
 
