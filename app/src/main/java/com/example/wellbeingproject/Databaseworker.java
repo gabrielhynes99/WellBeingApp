@@ -124,7 +124,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
                 String sleep_report = params[2];
                 String water_report = params[3];
                 String steps_report = params[4];
-                String report_date = params[5];
+                String date = params[5];
                 URL url = new URL(trackreport_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -137,7 +137,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
                         +URLEncoder.encode("sleep_report", "UTF-8") +"="+URLEncoder.encode(sleep_report, "UTF-8")+"&"
                         +URLEncoder.encode("water_report", "UTF-8") +"="+URLEncoder.encode(water_report, "UTF-8")+"&"
                         +URLEncoder.encode("steps_report", "UTF-8") +"="+URLEncoder.encode(steps_report, "UTF-8")+"&"
-                        +URLEncoder.encode("report_date", "UTF-8") +"="+URLEncoder.encode(report_date, "UTF-8");
+                        +URLEncoder.encode("date", "UTF-8") +"="+URLEncoder.encode(date, "UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -185,5 +185,6 @@ public class Databaseworker extends AsyncTask<String, String, String> {
     @Override
     protected void onProgressUpdate(String... values) {
         super.onProgressUpdate(values);
-    }
-}
+    }}
+
+
