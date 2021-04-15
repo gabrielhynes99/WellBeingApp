@@ -131,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Username = " + MainActivity.username, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Wellbeing.class);
                     startActivity(intent);
                 }
