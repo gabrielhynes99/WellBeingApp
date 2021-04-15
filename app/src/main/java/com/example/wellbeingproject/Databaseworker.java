@@ -31,6 +31,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
         String type = params[0];
         String login_url = "https://sjogwellbeingapp.com/login.php";
         String subreport_url = "https://sjogwellbeingapp.com/subreport.php";
+        String trackreport_url = "https://sjogwellbeingapp.com/tracker.php";
         //if the param is equal to login it will proceed with login function
         if(type.equals("login")) {
             //establish connection with database
@@ -124,7 +125,7 @@ public class Databaseworker extends AsyncTask<String, String, String> {
                 String water_report = params[3];
                 String steps_report = params[4];
                 String report_date = params[5];
-                URL url = new URL(subreport_url);
+                URL url = new URL(trackreport_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
                 httpURLConnection.setDoOutput(true);
