@@ -96,12 +96,12 @@ public class Tracker extends AppCompatActivity {
                                     SimpleDateFormat f12Hours = new SimpleDateFormat(
                                             "hh:mm aa"
                                     );
-                                    sleep.setText(f12Hours.format(date));
+                                    sleep.setText(f24Hours.format(date));
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
                             }
-                        },12,0,false
+                        },24,0,true
                 );
                 timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 timePickerDialog.updateTime(shour,sminute);
@@ -129,12 +129,12 @@ public class Tracker extends AppCompatActivity {
                                     SimpleDateFormat f12Hours = new SimpleDateFormat(
                                             "hh:mm aa"
                                     );
-                                    wake.setText(f12Hours.format(date));
+                                    wake.setText(f24Hours.format(date));
                                 } catch (ParseException e) {
                                     e.printStackTrace();
                                 }
                             }
-                        },12,0,false
+                        },24,0,true
                 );
                 timePickerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                 timePickerDialog.updateTime(whour,wminute);
