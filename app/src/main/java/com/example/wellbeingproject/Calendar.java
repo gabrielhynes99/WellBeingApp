@@ -70,6 +70,51 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
                             int i = 0;
                             while(i == 0) {
                                 t1.speak("Today is "+dayMonthDateFromDate(selectedDate), TextToSpeech.QUEUE_ADD, null, null);
+                                t1.speak("Today's Activities are:",  TextToSpeech.QUEUE_ADD,null, null);
+
+                                switch (dayOfWeek(selectedDate)) {
+                                    case "Monday":
+                                        t1.speak("Rise and Shine Social at 9:30am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Drama at 10:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Yoga at 12:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Cookery with Louise at 1:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Quiz at 2:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        break;
+                                    case "Tuesday":
+                                        t1.speak("Rise and Shine Social at 9:30am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Dance at 10:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Zumba at 11:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Sports at 12:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Story Corner at 1:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Sonas at 2:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Evening Exercise With Paul at 6:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        break;
+                                    case "Wednesday":
+                                        t1.speak("Rise and Shine Social at 9:30am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Art with Emma at 10:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Operation Transformation at 11:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Sports at 12:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Book Club at 1:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Gardening Group at 2:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        break;
+                                    case "Thursday":
+                                        t1.speak("Rise and Shine Social at 9:30am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Advocacy at 10:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Choir at 11:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Sports at 12:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Relaxation at 1:30pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Evening Exercise with Paul at 6:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        break;
+                                    case "Friday":
+                                        t1.speak("Rise and Shine Social at 9:30am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("jobs Club at 10:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Lámh at 11:00am", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Karate at 12:00pm", TextToSpeech.QUEUE_ADD, null, null);
+                                        t1.speak("Mini Disco at 1:00pm", TextToSpeech.QUEUE_ADD, null, null);
+
+                                        break;
+                                }//end of switch
+
                                 i++;
                             }
                         }
