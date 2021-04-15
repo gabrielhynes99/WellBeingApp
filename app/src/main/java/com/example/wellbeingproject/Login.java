@@ -14,14 +14,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Login extends AppCompatActivity {
     public static boolean logged_in;
-    public static String userID;
     EditText ETusername, ETpassword;
     Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         logged_in = false;
-        userID = "";
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
@@ -29,12 +27,11 @@ public class Login extends AppCompatActivity {
         ETusername = findViewById(R.id.username);
         ETpassword = findViewById(R.id.password);
         login = findViewById(R.id.login);
-
     }
 
     public void OnLogin(View view) {
-
         String username = ETusername.getText().toString();
+        MainActivity.username = username;
         String password = ETpassword.getText().toString();
         String type = "login";
         Databaseworker DBWorker = new Databaseworker(this);
@@ -52,6 +49,7 @@ public class Login extends AppCompatActivity {
     public synchronized void Loggedin() {
 
         if(logged_in) {
+            finish();
             Intent intent = new Intent(Login.this, MainActivity.class);
             startActivity(intent);
         }

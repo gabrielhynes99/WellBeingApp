@@ -58,6 +58,6 @@ public class Wellbeing_moveto_report extends AppCompatActivity {
     public void Onsubreport(View view) {
         String type = "subreport";
         Databaseworker DBWorker = new Databaseworker(this);
-        DBWorker.execute(type, Login.userID, Wellbeing.day_report, Wellbeing.feeling_report, Wellbeing.today_report, Wellbeing.aboutday_report, MainActivity.date);
+        DBWorker.execute(type, MainActivity.username, Wellbeing.day_report, Wellbeing.feeling_report, Wellbeing.today_report, Wellbeing.aboutday_report, MainActivity.date);
     }
 }

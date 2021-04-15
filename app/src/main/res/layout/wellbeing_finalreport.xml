@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="10"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@android:color/white">
 
     <include
         android:id="@+id/toolbar"
@@ -58,11 +59,7 @@
 
             </EditText>
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:src="@drawable/speech_to_text" />
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -74,6 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20sp"
                     android:background="@android:color/holo_orange_light"
                     android:text="Submit"
                     android:textColor="@android:color/white">
