@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public TextToSpeech t1;
     private Toolbar toolbar;
     public static String date;
+    public static String username;
 
 
     @Override
@@ -130,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else {
+                    Toast.makeText(getApplicationContext(),"Username = " + MainActivity.username, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, Wellbeing.class);
                     startActivity(intent);
                 }
