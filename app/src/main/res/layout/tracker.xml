@@ -136,23 +136,31 @@
                 android:layout_height="104dp"
                 android:layout_weight=".30"
                 android:layout_width="0dp"
-                android:src="@drawable/water" />
-            <EditText
+                android:src="@drawable/bed" />
+            <TextView
                 android:id="@+id/sleep"
                 android:layout_weight=".35"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:digits="0123456789"
-                android:hint="Water"
-                android:inputType="number" />
-            <EditText
-                android:id="@+id/sleep2"
+                android:hint="Sleep"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_baseline_access_time_24"
+                android:background="@android:drawable/editbox_background"
+                />
+            <TextView
+                android:id="@+id/wake"
                 android:layout_weight=".35"
-                android:layout_height="match_parent"
                 android:layout_width="0dp"
-                android:digits="0123456789"
-                android:hint="Water"
-                android:inputType="number" />
+                android:layout_height="match_parent"
+                android:hint="Wake"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_baseline_access_time_24"
+                android:background="@android:drawable/editbox_background"
+                />
         </LinearLayout>
     </GridLayout>
     <GridLayout
