@@ -156,35 +156,37 @@ public class Tracker extends AppCompatActivity {
         submit_tracker_report_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    Onsubtrackreport(v);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+                Onsubtrackreport(v);
                 finish();
             }
         });
     }
 
-    public void Onsubtrackreport(View view) throws ParseException {
+    public void Onsubtrackreport(View view) {
         sleepingT = calculateTime();
         String type = "tracker";
         Databaseworker DBWorker = new Databaseworker(this);
         DBWorker.execute(type, MainActivity.username, sleepingT, water, steps, MainActivity.date);
     }
 
-    public String calculateTime() throws ParseException {
+    public String calculateTime() {
+        String totaltime;
+        int thour = 0;
+        int tmin = 0;
 
-        String wtime = whour +":"+ wminute;
-        String stime = shour +":"+ sminute;
+        if(wminute > sminute) {
+            tmin = wminute - sminute;
+        }
+        else if(wminute < sminute) {
+            whour = whour - 1;
+            wminute = wminute + 60;
+            tmin = wminute - sminute;
+        }
 
-        SimpleDateFormat format = new SimpleDateFormat("HH:mm");
-        Date date1 = format.parse(wtime);
-        Date date2 = format.parse(stime);
-        long time = date2.getTime() - date1.getTime();
-        String totaltime = time+"";
+        thour = whour - shour;
 
-        return  totaltime;
+        totaltime = thour + ":" + tmin;
+        return totaltime;
 
     }
 }
