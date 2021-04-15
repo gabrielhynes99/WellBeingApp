@@ -13,8 +13,8 @@ public class ProjectDatabaseHelper extends SQLiteOpenHelper
 
     //names of the column headings in the project database
     public static final String KEY_ROWID = "_id";
+    public static final String KEY_DAYID = "d_id";
     public static final String KEY_DAY = "day";
-    public static final String KEY_IMAGE = "image";
     public static final String KEY_NAME = "name";
     public static final String KEY_TIME = "time";
 
@@ -26,9 +26,9 @@ public class ProjectDatabaseHelper extends SQLiteOpenHelper
     // This is the string containing the SQL database create statement
     private static final String DATABASE_CREATE =
             "create table " + DATABASE_TABLE1  +
-                    " (_id integer primary key autoincrement, " +
+                    " (_id integer primary key, " +
+                    "d_id integer not null, " +
                     "day text not null, " +
-                    "image blob not null, "  +
                     "name text not null, "  +
                     "time text not null);";
 

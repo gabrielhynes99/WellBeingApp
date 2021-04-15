@@ -10,7 +10,8 @@ import java.sql.Blob;
 
 import static com.example.wellbeingproject.Database.ProjectDatabaseHelper.DATABASE_TABLE1;
 import static com.example.wellbeingproject.Database.ProjectDatabaseHelper.KEY_DAY;
-import static com.example.wellbeingproject.Database.ProjectDatabaseHelper.KEY_IMAGE;
+import static com.example.wellbeingproject.Database.ProjectDatabaseHelper.KEY_DAYID;
+import static com.example.wellbeingproject.Database.ProjectDatabaseHelper.KEY_DAYID;
 import static com.example.wellbeingproject.Database.ProjectDatabaseHelper.KEY_NAME;
 import static com.example.wellbeingproject.Database.ProjectDatabaseHelper.KEY_ROWID;
 import static com.example.wellbeingproject.Database.ProjectDatabaseHelper.KEY_TIME;
@@ -46,11 +47,12 @@ public class ProjectDatabaseManager
     }
 
     //---insert a activity into the database---
-    public long insertItems(String day, String image, String name, String time)
+    public long insertItems(long rowId, long dayId, String day, String name, String time)
     {
         ContentValues initialValues = new ContentValues();
+        initialValues.put(KEY_ROWID, rowId);
+        initialValues.put(KEY_DAYID, dayId);
         initialValues.put(KEY_DAY, day);
-        initialValues.put(KEY_IMAGE, image);
         initialValues.put(KEY_NAME, name);
         initialValues.put(KEY_TIME, time);
         return myDatabase.insert(DATABASE_TABLE1, null, initialValues);
@@ -70,8 +72,8 @@ public class ProjectDatabaseManager
     {
         return myDatabase.query(DATABASE_TABLE1, new String[] {
                         KEY_ROWID,
+                        KEY_DAYID,
                         KEY_DAY,
-                        KEY_IMAGE,
                         KEY_NAME,
                         KEY_TIME},
                 null,
@@ -81,14 +83,30 @@ public class ProjectDatabaseManager
                 null);
     }
 
+    //---retrieves all the rows ---
+    public Cursor getAllItems2(long dayId)
+    {
+        return myDatabase.query(DATABASE_TABLE1, new String[] {
+                        KEY_ROWID,
+                        KEY_DAYID,
+                        KEY_DAY,
+                        KEY_NAME,
+                        KEY_TIME},
+                KEY_DAYID + "=" + dayId,
+                null,
+                null,
+                null,
+                null);
+    }
+
     //---retrieves a particular activity---
-    public Cursor getItem(long rowId) throws SQLException
+    public Cursor getDayItems(long rowId) throws SQLException
     {
         Cursor mCursor =
                 myDatabase.query(true, DATABASE_TABLE1, new String[] {
                                 KEY_ROWID,
+                                KEY_DAYID,
                                 KEY_DAY,
-                                KEY_IMAGE,
                                 KEY_NAME,
                                 KEY_TIME
                         },
@@ -104,17 +122,6 @@ public class ProjectDatabaseManager
         return mCursor;
     }
 
-    //---updates a activity---
-    public boolean updateProject(long rowId, String day,
-                                 String image, String name, String time)
-    {
-        ContentValues args = new ContentValues();
-        args.put(KEY_DAY, day);
-        args.put(KEY_IMAGE, image);
-        args.put(KEY_NAME, name);
-        args.put(KEY_TIME, time);
-        return myDatabase.update(DATABASE_TABLE1, args,
-                KEY_ROWID + "=" + rowId, null) > 0;
-    }
+
 }
 

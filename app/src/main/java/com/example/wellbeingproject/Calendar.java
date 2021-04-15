@@ -58,10 +58,75 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         // opening database
         mydb.open();
 
-        //mydb.insertItems("Monday","0", "Lamh","10:00a,");
+
+        for(int i = 1; i < 29; i++){
+            mydb.deleteItems(i);
+        }
+
+
+        //Inserting Mondays Activities
+        mydb.insertItems(1,1,"Monday",  "Rise and Shine Social", "9:30am");
+        mydb.insertItems(2,1,"Monday",  "Drama", "10:00am");
+        mydb.insertItems(3,1,"Monday",  "Yoga", "12:00pm");
+        mydb.insertItems(4,1,"Monday",  "Cookery with Louise", "1:00pm");
+        mydb.insertItems(5,1,"Monday",  "Quiz", "2:00pm");
+
+        //Inserting Tuesdays Activities
+        mydb.insertItems(6,2,"Tuesday",  "Rise and Shine Social", "9:30am");
+        mydb.insertItems(7,2,"Tuesday",  "Dance", "10:00am");
+        mydb.insertItems(8,2,"Tuesday",  "Zumba", "11:00am");
+        mydb.insertItems(9,2,"Tuesday",  "Sports(jersey Day)", "12:00pm");
+        mydb.insertItems(10,2,"Tuesday",  "Story Corner", "1:00pm");
+        mydb.insertItems(11,2,"Tuesday",  "Sonas", "2:00pm");
+        mydb.insertItems(12,2,"Tuesday",  "Evening Exercise With Paul", "6:00pm");
+
+        //Inserting Wednesday Activities
+        mydb.insertItems(13,3,"Wednesday","Rise and Shine Social","9:30am");
+        mydb.insertItems(14,3,"Wednesday","Art with Emma","10:00am");
+        mydb.insertItems(15,3,"Wednesday","Operation Transformation","11:00am");
+        mydb.insertItems(16,3,"Wednesday","Sports","12:00am");
+        mydb.insertItems(17,3,"Wednesday","Book Club","1.00pm");
+        mydb.insertItems(18,3,"Wednesday","Gardening Group","2.00pm");
+
+        //Inserting Thursday Activities
+        mydb.insertItems(19,4,"Thursday","Rise and Shine Social","9:30am");
+        mydb.insertItems(20,4,"Thursday","Advocacy","10.00am");
+        mydb.insertItems(21,4,"Thursday","Choir","11.00am");
+        mydb.insertItems(22,4,"Thursday","Sports","12.00pm");
+        mydb.insertItems(23,4,"Thursday","Relaxation","1.30pm");
+        mydb.insertItems(24,4,"Thursday","Evening Exercise with Paul","6.00pm");
+
+
+        //Inserting Friday Activities
+        mydb.insertItems(25,5,"Friday","Rise and Shine Social","9:30am");
+        mydb.insertItems(26,5,"Friday","jobs Club","10:00am");
+        mydb.insertItems(27,5,"Friday","Lámh","11.00am");
+        mydb.insertItems(28,5,"Friday","Karate","12.00pm");
+        mydb.insertItems(29,5,"Friday","Mini Disco","1.00pm");
+
+
 
         // Initialising my cursor with all the items in my database
-        myCursor = mydb.getAllItems();
+        //for that day.
+
+        switch (dayOfWeek(selectedDate)) {
+            case "Monday":
+                myCursor = mydb.getAllItems2(1);
+                break;
+            case "Tuesday":
+                myCursor = mydb.getAllItems2(2);
+                break;
+            case "Wedensday":
+                myCursor = mydb.getAllItems2(3);
+                break;
+            case "Thursday":
+                myCursor = mydb.getAllItems2(4);
+                break;
+            case "Friday":
+                myCursor = mydb.getAllItems2(5);
+
+                break;
+        }//end of switch
 
         // Creating and Initialising my list view with the
         // List view i want to populate in my xml file
@@ -141,6 +206,12 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
     private String dayMonthDateFromDate(LocalDate date){
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE MMMM d");
+        return date.format(formatter);
+    }
+
+    private String dayOfWeek(LocalDate date){
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("EEEE");
         return date.format(formatter);
     }
 
