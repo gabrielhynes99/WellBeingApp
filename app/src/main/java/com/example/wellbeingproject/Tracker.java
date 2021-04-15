@@ -62,7 +62,7 @@ public class Tracker extends AppCompatActivity {
                             while (i == 0) {
                                 ttstracker.speak("How many steps did you take today?", TextToSpeech.QUEUE_ADD, null, null);
                                 ttstracker.playSilentUtterance(1000, TextToSpeech.QUEUE_ADD, null);
-                                ttstracker.speak("How may glasses of water did you drink today?", TextToSpeech.QUEUE_ADD, null, null);
+                                ttstracker.speak("How many glasses of water did you drink today?", TextToSpeech.QUEUE_ADD, null, null);
                                 ttstracker.playSilentUtterance(1000, TextToSpeech.QUEUE_ADD, null);
                                 ttstracker.speak("Enter the time you went to sleep and the time you woke up", TextToSpeech.QUEUE_ADD, null, null);
                                 ttstracker.playSilentUtterance(1000, TextToSpeech.QUEUE_ADD, null);
