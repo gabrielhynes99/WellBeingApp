@@ -52,6 +52,8 @@ public class Wellbeing_tasks extends AppCompatActivity {
                         public void onClick(View v) {
                             int i = 0;
                             while(i == 0) {
+                                t1.speak("What made you feel" + emotion, TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Friends", TextToSpeech.QUEUE_ADD, null, null);
                                 t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Games", TextToSpeech.QUEUE_ADD, null, null);
@@ -100,6 +102,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "friends";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -109,6 +112,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "games";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -118,6 +122,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "weather";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -127,6 +132,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "sleep";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -136,6 +142,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "health";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -145,6 +152,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "shopping";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -154,6 +162,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "dancing";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -163,6 +172,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "relationship";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -173,6 +183,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "music";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -182,6 +193,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "work";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -192,6 +204,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "learning";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }
@@ -202,6 +215,7 @@ public class Wellbeing_tasks extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Wellbeing.today_report = "other";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_tasks.this, Wellbeing_moveto_report.class);
                 startActivity(intent);
             }

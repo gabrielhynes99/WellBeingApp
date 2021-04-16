@@ -49,16 +49,18 @@ public class Wellbeing extends AppCompatActivity {
                         public void onClick(View v) {
                             int i = 0;
                             while(i == 0) {
+                                t1.speak("How was your day?", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Really good", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Good", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Okay", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Bad", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Really bad", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 i++;
                             }
                         }
@@ -80,6 +82,7 @@ public class Wellbeing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 day_report = "really good";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }
@@ -90,6 +93,7 @@ public class Wellbeing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 day_report = "good";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }
@@ -100,6 +104,7 @@ public class Wellbeing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 day_report = "okay";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }
@@ -110,6 +115,7 @@ public class Wellbeing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 day_report = "bad";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }
@@ -120,6 +126,7 @@ public class Wellbeing extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 day_report = "really bad";
+                t1.stop();
                 Intent intent = new Intent(Wellbeing.this, Wellbeing_emotions.class);
                 startActivity(intent);
             }

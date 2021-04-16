@@ -47,20 +47,22 @@ public class Wellbeing_emotions extends AppCompatActivity {
                         public void onClick(View v) {
                             int i = 0;
                             while(i == 0) {
+                                t1.speak("How are you feeling today?", TextToSpeech.QUEUE_ADD, null, null);
+                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Happy", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Good", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Okay", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Bad", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Sad", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Sick", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Angry", TextToSpeech.QUEUE_ADD, null, null);
-                                t1.playSilentUtterance(500, TextToSpeech.QUEUE_ADD, null);
+                                t1.playSilentUtterance(300, TextToSpeech.QUEUE_ADD, null);
                                 t1.speak("Anxious", TextToSpeech.QUEUE_ADD, null, null);
                                 i++;
                             }
@@ -85,6 +87,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "happy";
                 Wellbeing.feeling_report = "happy";
+                t1.stop();
                 startActivity(intent);
             }
         });
@@ -96,6 +99,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "good";
                 Wellbeing.feeling_report = "good";
+                t1.stop();
                 startActivity(intent);
             }
         });
@@ -107,6 +111,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "okay";
                 Wellbeing.feeling_report = "okay";
+                t1.stop();
                 startActivity(intent);
             }
         });
@@ -118,6 +123,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "bad";
                 Wellbeing.feeling_report = "bad";
+                t1.stop();
                 startActivity(intent);
             }
         });
@@ -129,6 +135,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "sad";
                 Wellbeing.feeling_report = "sad";
+                t1.stop();
                 startActivity(intent);
             }
         });
@@ -140,6 +147,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "sick";
                 Wellbeing.feeling_report = "sick";
+                t1.stop();
                 startActivity(intent);
             }
         });
@@ -151,6 +159,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "angry";
                 Wellbeing.feeling_report = "angry";
+                t1.stop();
                 startActivity(intent);
             }
         });
@@ -162,6 +171,7 @@ public class Wellbeing_emotions extends AppCompatActivity {
                 Intent intent = new Intent(Wellbeing_emotions.this, Wellbeing_tasks.class);
                 emotion = "anxious";
                 Wellbeing.feeling_report = "anxious";
+                t1.stop();
                 startActivity(intent);
             }
         });
