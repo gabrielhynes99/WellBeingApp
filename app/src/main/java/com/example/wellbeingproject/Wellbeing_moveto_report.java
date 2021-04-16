@@ -60,6 +60,7 @@ public class Wellbeing_moveto_report extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 finish();
             }
         });
@@ -67,6 +68,7 @@ public class Wellbeing_moveto_report extends AppCompatActivity {
         yes_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_moveto_report.this, Wellbeing_finalreport.class);
                 startActivity(intent);
             }
@@ -76,6 +78,7 @@ public class Wellbeing_moveto_report extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Onsubreport(v);
+                t1.stop();
                 Intent intent = new Intent(Wellbeing_moveto_report.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);

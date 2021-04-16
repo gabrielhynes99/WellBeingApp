@@ -62,6 +62,7 @@ public class Wellbeing_finalreport extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 finish();
             }
         });
@@ -69,6 +70,7 @@ public class Wellbeing_finalreport extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 finalreport = freport.getText().toString();
                 Wellbeing.aboutday_report = finalreport;
                 Onsubreport(v);
