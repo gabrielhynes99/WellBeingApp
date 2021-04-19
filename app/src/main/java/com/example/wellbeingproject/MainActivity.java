@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         mentorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 if(Login.logged_in == false)
                 {
                     Intent intent = new Intent(MainActivity.this, Login.class);
@@ -100,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         calendar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 if(Login.logged_in == false)
                 {
                     Intent intent = new Intent(MainActivity.this, Login.class);
@@ -116,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         support.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 Intent intent = new Intent(MainActivity.this, Support.class);
                 startActivity(intent);
             }
@@ -125,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         wellbeing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 if(Login.logged_in == false)
                 {
                     Intent intent = new Intent(MainActivity.this, Login.class);
@@ -141,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
         activities.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 Intent intent = new Intent(MainActivity.this, Activities.class);
                 startActivity(intent);
             }
@@ -150,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         tracker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 if(Login.logged_in == false)
                 {
                     Intent intent = new Intent(MainActivity.this, Login.class);

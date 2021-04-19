@@ -51,6 +51,7 @@ public class Calendar extends AppCompatActivity implements CalendarAdapter.OnIte
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 finish();
             }
         });

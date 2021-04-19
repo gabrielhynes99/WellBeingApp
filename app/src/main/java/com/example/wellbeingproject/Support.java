@@ -30,6 +30,7 @@ public class Support extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 finish();
             }
         });
