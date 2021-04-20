@@ -62,11 +62,23 @@ public class User extends AppCompatActivity {
                         setContentView(R.layout.userdetails);
                         listview= (ListView)findViewById(R.id.list);
                         getData();
+
+                        ImageView backbutton = findViewById(R.id.back_button);
+
+                        //to access the back button
+                        backbutton.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                finish();
+                            }
+                        });
+
                     }
                 });
 
             }
         });
+
 
         ImageView backbutton = findViewById(R.id.back_button);
 
