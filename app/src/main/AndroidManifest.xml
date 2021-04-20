@@ -73,6 +73,10 @@
             android:parentActivityName=".MainActivity" >
         </activity>
 
+        <activity android:name=".User"
+            android:parentActivityName=".MainActivity" >
+        </activity>
+
     </application>
 
 </manifest>

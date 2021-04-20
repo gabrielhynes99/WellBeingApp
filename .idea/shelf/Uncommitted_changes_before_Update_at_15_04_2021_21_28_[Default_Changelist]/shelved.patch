@@ -1,0 +1,27 @@
+Index: app/src/main/res/layout/row.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<LinearLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    android:layout_width=\"fill_parent\"\r\n    android:layout_height=\"wrap_content\"\r\n    android:orientation=\"horizontal\">\r\n\r\n    <TextView\r\n        android:id=\"@+id/dot\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"5dp\"\r\n        android:textAlignment=\"center\"\r\n        android:text=\"o\"\r\n        android:textAppearance=\"@style/TextAppearance.AppCompat.Large\"\r\n        android:textColor=\"#F32121\"\r\n        android:textSize=\"30sp\" />\r\n\r\n\r\n    <ImageView\r\n        android:id=\"@+id/imageView\"\r\n        android:layout_width=\"50dp\"\r\n        android:layout_height=\"45dp\"\r\n        app:srcCompat=\"@drawable/work\"\r\n        android:textAlignment=\"gravity\"/>\r\n\r\n\r\n    <TextView\r\n        android:id=\"@+id/activityName\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"10dp\"\r\n        android:text=\"Jobs Club\"\r\n        android:textAlignment=\"center\"\r\n        android:textAppearance=\"@style/TextAppearance.AppCompat.Medium\"\r\n        android:textColor=\"@color/black\" />\r\n\r\n    <TextView\r\n        android:id=\"@+id/time\"\r\n        android:layout_width=\"wrap_content\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:layout_marginStart=\"10dp\"\r\n        android:text=\"10.00am\"\r\n        android:textAlignment=\"center\"\r\n        android:textAppearance=\"@style/TextAppearance.AppCompat.Medium\"\r\n        android:textColor=\"@color/gray\" />\r\n\r\n\r\n\r\n</LinearLayout>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/row.xml	(revision 533156e1f0b43ce11ab91d324985babd9b329672)
++++ app/src/main/res/layout/row.xml	(date 1618501791242)
+@@ -30,7 +30,7 @@
+         android:id="@+id/activityName"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="10dp"
++        android:layout_marginStart="5dp"
+         android:text="Jobs Club"
+         android:textAlignment="center"
+         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+@@ -40,7 +40,7 @@
+         android:id="@+id/time"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="10dp"
++        android:layout_marginStart="5dp"
+         android:text="10.00am"
+         android:textAlignment="center"
+         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
