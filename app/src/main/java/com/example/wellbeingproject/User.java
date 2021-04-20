@@ -53,6 +53,16 @@ public class User extends AppCompatActivity {
                 listview2= (ListView)findViewById(R.id.list2);
                 getReportData();
 
+                ImageView backbutton = findViewById(R.id.back_button);
+
+                //to access the back button
+                backbutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                });
+
                 wellbeing = (Button) findViewById(R.id.wellbeingbtn);
 
                 wellbeing.setOnClickListener(new View.OnClickListener() {
