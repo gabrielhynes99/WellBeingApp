@@ -43,6 +43,7 @@ public class Tracker extends AppCompatActivity {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ttstracker.stop();
                 finish();
             }
         });
@@ -153,6 +154,7 @@ public class Tracker extends AppCompatActivity {
         submit_tracker_report_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ttstracker.stop();
                 Onsubtrackreport(v);
                 finish();
             }

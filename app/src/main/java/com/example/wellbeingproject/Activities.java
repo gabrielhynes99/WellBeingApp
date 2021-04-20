@@ -46,6 +46,7 @@ public class Activities extends FragmentActivity implements OnMapReadyCallback {
         backbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                t1.stop();
                 finish();
             }
         });
