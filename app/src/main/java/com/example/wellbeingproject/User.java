@@ -94,7 +94,10 @@ public class User extends AppCompatActivity {
 
     private void getData() {
 
-        String url = Config6.DATA_URL + MESSAGE;
+        //int number = Integer.parseInt(MESSAGE.getString(0));
+        int number = MESSAGE+4;
+
+        String url = Config6.DATA_URL + number;
 
 
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {
@@ -161,7 +164,9 @@ public class User extends AppCompatActivity {
     private void getReportData() {
 
 
-        String url = Config7.DATA_URL + MESSAGE;
+        int number = MESSAGE+4;
+
+        String url = Config7.DATA_URL + number;
 
 
         StringRequest stringRequest = new StringRequest(url, new Response.Listener<String>() {

@@ -31,10 +31,11 @@ import java.util.HashMap;
 
 public class Mentor extends AppCompatActivity implements AdapterView.OnItemClickListener {
     private Toolbar toolbar;
-    public static String MESSAGE;
+    public static int MESSAGE;
     EditText txtvalue;
     Button btnfetch;
     ListView listview;
+    int count = 0;
 
 
     @Override
@@ -109,6 +110,7 @@ public class Mentor extends AppCompatActivity implements AdapterView.OnItemClick
                 String id = jo.getString(Config5.ID);
                 String fname = jo.getString(Config5.FIRST_NAME);
                 String sname = jo.getString(Config5.SECOND_NAME);
+                String uname = jo.getString(Config5.SECOND_NAME);
 
 
                 final HashMap<String, String> users = new HashMap<>();
@@ -124,6 +126,7 @@ public class Mentor extends AppCompatActivity implements AdapterView.OnItemClick
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         ListAdapter adapter = new SimpleAdapter(
                 Mentor.this, list, R.layout.mylist,
                 new String[]{Config5.ID, Config5.FIRST_NAME, Config5.SECOND_NAME},
@@ -134,10 +137,12 @@ public class Mentor extends AppCompatActivity implements AdapterView.OnItemClick
     }
 
     @Override
-    public void onItemClick(AdapterView<?> adapter, View arg1, int position, long arg3) {
+    public void onItemClick(AdapterView<?> adapter,View arg1, int position, long arg3) {
         //TODO Auto-generated method stub
         Intent i = new Intent(Mentor.this, User.class);
-        MESSAGE = Config5.ID;
+
+        MESSAGE = position;
+
         startActivity(i);
         finish();
 
